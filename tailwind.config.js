@@ -1,3 +1,5 @@
+const { Outfit } = require('next/font/google');
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
@@ -26,6 +28,10 @@ module.exports = {
           '900': '#13542c',
           '950': '#042f15',
         },
+      },
+      fontFamily: {
+        outfit: ["outfit","sans-serif"], 
+        switzer: ["switzer","sans"], 
       },
     },
   },
