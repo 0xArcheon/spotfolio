@@ -1,6 +1,6 @@
 import Navbar from "./components/Navbar.js";
 import MainCard from "./components/MainCard.js";
-import NowPlaying from "./components/NowPlaying.js";
+import RightCard from "./components/RightCard.js";
 
 export default function Home() {
   return (
@@ -11,7 +11,7 @@ export default function Home() {
       <Navbar />
       <div className="flex">
         <MainCard />
-        <NowPlaying />
+        <RightCard />
       </div>
     </div>
   );
