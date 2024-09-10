@@ -1,5 +1,6 @@
 import React from "react";
 import NowPlaying from "./NowPlaying";
+import TechStack from "./TechStack";
 
 function RightCard() {
   return (
@@ -9,6 +10,7 @@ function RightCard() {
        backdrop-filter backdrop-blur-3xl bg-opacity-30 rounded-lg z-[-1]"
       ></div>
       <NowPlaying />
+      <TechStack />
     </div>
   );
 }

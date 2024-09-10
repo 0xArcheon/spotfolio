@@ -1,4 +1,4 @@
-const { Outfit } = require('next/font/google');
+const { Outfit } = require("next/font/google");
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
@@ -9,29 +9,24 @@ module.exports = {
   ],
   theme: {
     extend: {
-      backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
-      },
       colors: {
         fern: {
-          '50': '#f0fdf4',
-          '100': '#dbfde6',
-          '200': '#baf8cf',
-          '300': '#84f1aa',
-          '400': '#48e07d',
-          '500': '#1db954',
-          '600': '#14a547',
-          '700': '#13823b',
-          '800': '#156633',
-          '900': '#13542c',
-          '950': '#042f15',
+          50: "#f0fdf4",
+          100: "#dbfde6",
+          200: "#baf8cf",
+          300: "#84f1aa",
+          400: "#48e07d",
+          500: "#1db954",
+          600: "#14a547",
+          700: "#13823b",
+          800: "#156633",
+          900: "#13542c",
+          950: "#042f15",
         },
       },
       fontFamily: {
-        outfit: ["outfit","sans-serif"], 
-        switzer: ["switzer","sans"], 
+        outfit: ["outfit", "sans-serif"],
+        switzer: ["switzer", "sans"],
       },
     },
   },
