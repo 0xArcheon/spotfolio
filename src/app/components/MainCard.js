@@ -1,6 +1,7 @@
 import React from "react";
 import IntroSection from "./IntroSection";
 import LinksSection from "./LinksSection";
+import ProjectSection from "./ProjectSection";
 
 function MainCard() {
   return (
@@ -18,6 +19,7 @@ function MainCard() {
       </div>
       <IntroSection />
       <LinksSection />
+      <ProjectSection />
     </main>
   );
 }
