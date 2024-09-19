@@ -1,5 +1,7 @@
 "use client";
 import React, { useState } from "react";
+import * as motion from "framer-motion/client";
+import { easeOut } from "framer-motion";
 
 function TechStack() {
   const [tech, setTech] = useState("language");
@@ -60,7 +62,10 @@ function TechStack() {
   ];
 
   return (
-    <div
+    <motion.div
+      initial={{ opacity: 0, y: +100 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5, ease: easeOut, delay: 0.2 }}
       className="techstack flex flex-col mt-10 rounded-xl p-4 gap-2
     bg-slate-500 bg-clip-padding backdrop-filter backdrop-blur-3xl bg-opacity-30"
     >
@@ -137,7 +142,7 @@ function TechStack() {
             </div>
           ))}
       </div>
-    </div>
+    </motion.div>
   );
 }
 

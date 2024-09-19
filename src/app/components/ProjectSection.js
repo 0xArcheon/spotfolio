@@ -1,5 +1,7 @@
 import React from "react";
 import ProjectsCard from "./ProjectsCard";
+import * as motion from "framer-motion/client";
+import { easeOut } from "framer-motion";
 
 const Projects = [
   {
@@ -21,17 +23,36 @@ const Projects = [
       "https://images.unsplash.com/photo-1548783300-70b41bc84f56?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     link: "github.com",
   },
+  {
+    name: "Assam Transport",
+    image:
+      "https://images.pexels.com/photos/1123972/pexels-photo-1123972.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    link: "github.com",
+  },
 ];
 
 function ProjectSection() {
   return (
     <div className="projectsection p-8">
       <div className="title">Projects</div>
-      <div className="container flex">
+      <motion.div
+        variants={{
+          hidden: { opacity: 0 },
+          show: {
+            opacity: 1,
+            transition: {
+              staggerChildren: 0.25,
+            },
+          },
+        }}
+        initial="hidden"
+        animate="show"
+        className="container flex overflow-x-auto"
+      >
         {Projects.map((item) => {
-          return <ProjectsCard data={item} key={item} />;
+          return <ProjectsCard data={item} key={item} motion={motion} />;
         })}
-      </div>
+      </motion.div>
     </div>
   );
 }

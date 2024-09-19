@@ -1,8 +1,11 @@
 import React from "react";
 
-function ProjectsCard({ data }) {
+function ProjectsCard({ data, motion }) {
   return (
-    <div className="projectscard rounded-md p-6 hover:bg-gray-800 w-fit">
+    <motion.div
+      variants={{ hidden: { opacity: 0 }, show: { opacity: 1 } }}
+      className="projectscard rounded-md p-6 hover:bg-gray-800 aspect-square"
+    >
       <div className="h-60">
         <img
           className="rounded-md h-full aspect-square object-cover"
@@ -14,7 +17,7 @@ function ProjectsCard({ data }) {
         </div>
       </div>
       <div className="name py-2">{data.name}</div>
-    </div>
+    </motion.div>
   );
 }
 
