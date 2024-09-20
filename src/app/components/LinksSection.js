@@ -26,7 +26,7 @@ const socials = [
 
 function LinksSection() {
   return (
-    <main className="linkssection flex p-8 justify-between">
+    <main className="linkssection flex p-8 justify-between z-10">
       <div className="slideshow w-1/2">
         <div className="title">Gallery</div>
         <img

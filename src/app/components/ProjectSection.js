@@ -1,7 +1,6 @@
 import React from "react";
 import ProjectsCard from "./ProjectsCard";
 import * as motion from "framer-motion/client";
-import { easeOut } from "framer-motion";
 
 const Projects = [
   {
@@ -33,7 +32,7 @@ const Projects = [
 
 function ProjectSection() {
   return (
-    <div className="projectsection p-8">
+    <div className="projectsection p-8 z-10">
       <div className="title">Projects</div>
       <motion.div
         variants={{
@@ -47,7 +46,7 @@ function ProjectSection() {
         }}
         initial="hidden"
         animate="show"
-        className="container flex overflow-x-auto"
+        className="container flex"
       >
         {Projects.map((item) => {
           return <ProjectsCard data={item} key={item} motion={motion} />;
