@@ -11,7 +11,7 @@ function IntroSection() {
       </div>
       <div className="photo rounded-xl">
         <img
-          src="https://img.freepik.com/free-psd/3d-illustration-human-avatar-profile_23-2150671116.jpg?t=st=1725607501~exp=1725611101~hmac=6fbd2cb00e0831eca36ecd60aa1f2ec49734e387e6c608540cdbb65d71ed0573&w=740"
+          src="this-is.jpg"
           alt=""
           className="h-full object-contain rounded-xl"
         />

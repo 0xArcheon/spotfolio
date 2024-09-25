@@ -21,7 +21,7 @@ function MainCard() {
   };
 
   const handleMouseLeave = () => {
-    setMousePosition({ x: dimensions.width / 2, y: dimensions.height / 2 });
+    setMousePosition({ x: 0, y: 0 });
   };
 
   return (
@@ -47,8 +47,8 @@ function MainCard() {
           left: 0,
           width: "100%",
           height: "100%",
-          background: `radial-gradient(circle at ${mousePosition.x}px ${mousePosition.y}px, rgba(98, 208, 137, 0.5), transparent 40%)`, // Glow radius set to 30%
-          transition: "background 0.1s ease",
+          background: `radial-gradient(circle at ${mousePosition.x}px ${mousePosition.y}px, rgba(98, 208, 137, 0.5), transparent 40%)`,
+          transition: "background 8s ease-out",
         }}
       ></div>
 

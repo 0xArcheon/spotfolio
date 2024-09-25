@@ -1,6 +1,7 @@
 import React from "react";
 import ProjectsCard from "./ProjectsCard";
-import * as motion from "framer-motion/client";
+import { motion, useInView } from "framer-motion";
+import { useRef } from "react";
 
 const Projects = [
   {
@@ -31,26 +32,32 @@ const Projects = [
 ];
 
 function ProjectSection() {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true }); // Animation triggers once when in view
+
   return (
     <div className="projectsection p-8 z-10">
       <div className="title">Projects</div>
       <motion.div
+        ref={ref}
         variants={{
-          hidden: { opacity: 0 },
+          hidden: { opacity: 0, y: 50 },
           show: {
             opacity: 1,
+            y: 0,
             transition: {
               staggerChildren: 0.25,
+              duration: 0.5,
             },
           },
         }}
         initial="hidden"
-        animate="show"
-        className="container flex"
+        animate={isInView ? "show" : "hidden"}
+        className="container flex overflow-x-scroll"
       >
-        {Projects.map((item) => {
-          return <ProjectsCard data={item} key={item} motion={motion} />;
-        })}
+        {Projects.map((item, index) => (
+          <ProjectsCard data={item} key={index} motion={motion} />
+        ))}
       </motion.div>
     </div>
   );

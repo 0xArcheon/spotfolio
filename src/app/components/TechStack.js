@@ -5,6 +5,25 @@ import { easeOut } from "framer-motion";
 
 function TechStack() {
   const [tech, setTech] = useState("language");
+  const [dimensions, setDimensions] = useState({ width: 0, height: 0 });
+  const [mousePosition, setMousePosition] = useState({
+    x: dimensions.width,
+    y: 0,
+  });
+
+  // Track mouse position and card dimensions
+  const handleMouseMove = (e) => {
+    const rect = e.currentTarget.getBoundingClientRect();
+    const mouseX = e.clientX - rect.left;
+    const mouseY = e.clientY - rect.top;
+
+    setMousePosition({ x: mouseX, y: mouseY });
+    setDimensions({ width: rect.width, height: rect.height });
+  };
+
+  const handleMouseLeave = () => {
+    setMousePosition({ x: dimensions.width, y: 0 });
+  };
 
   const framework = [
     { name: "React", icon: "react.png" },
@@ -65,9 +84,27 @@ function TechStack() {
       initial={{ opacity: 0, y: 100 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, ease: easeOut, delay: 0.2 }}
+      onMouseMove={handleMouseMove}
+      onMouseLeave={handleMouseLeave}
+      style={{
+        position: "relative",
+        overflow: "hidden",
+        background: "rgba(255, 255, 255, 0.1)",
+      }}
       className="techstack flex flex-col mt-10 rounded-xl p-4 gap-2
     bg-slate-500 bg-clip-padding backdrop-filter backdrop-blur-3xl bg-opacity-30"
     >
+      <div
+        className="absolute pointer-events-none"
+        style={{
+          top: 0,
+          left: 0,
+          width: "100%",
+          height: "100%",
+          background: `radial-gradient(circle at ${mousePosition.x}px ${mousePosition.y}px, rgba(98, 208, 137, 0.5), transparent 60%)`,
+          transition: "background 0.5s easeOut",
+        }}
+      ></div>
       <div className="title">Technology Stack</div>
       <div className="category text-xs flex gap-2 mt-4">
         <button

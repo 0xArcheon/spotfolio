@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import SocialCard from "./SocialCard";
 
 const socials = [
@@ -22,6 +22,12 @@ const socials = [
     icon: "download.svg",
     link: "https://drive.google.com/file/d/1pdZDsgwONU3R7gWPi-o9pWeBK_kgxbCV/view",
   },
+];
+
+const images = [
+  "https://images.pexels.com/photos/1128797/pexels-photo-1128797.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+  "https://images.pexels.com/photos/247599/pexels-photo-247599.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+  "https://cdn.pixabay.com/photo/2024/01/04/21/54/volcano-8488486_1280.jpg",
 ];
 
 function LinksSection() {
