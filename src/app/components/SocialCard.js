@@ -5,6 +5,7 @@ function SocialCard({ name, icon, link }) {
   return (
     <motion.a
       href={link}
+      target="_blank"
       className="socialcard rounded-xl p-2 w-5/12 aspect-square flex justify-center"
       whileHover={{
         scale: 1.1,

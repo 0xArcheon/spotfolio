@@ -33,7 +33,7 @@ const Projects = [
 
 function ProjectSection() {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true }); // Animation triggers once when in view
+  const isInView = useInView(ref, { once: true });
 
   return (
     <div className="projectsection p-8 z-10">
@@ -53,7 +53,8 @@ function ProjectSection() {
         }}
         initial="hidden"
         animate={isInView ? "show" : "hidden"}
-        className="container flex overflow-x-scroll"
+        className="container flex overflow-x-scroll scrollbar-thumb-rounded-xl scrollbar-corner-rounded-xl 
+        scrollbar-track-rounded-xl scrollbar-thin scrollbar-track-slate-900 scrollbar-thumb-fern-200"
       >
         {Projects.map((item, index) => (
           <ProjectsCard data={item} key={index} motion={motion} />
