@@ -23,10 +23,15 @@ module.exports = {
           900: "#13542c",
           950: "#042f15",
         },
+        spotify: {
+          400: "#56EA64",
+        },
       },
       fontFamily: {
         outfit: ["outfit", "sans-serif"],
         switzer: ["switzer", "sans"],
+        hauora: ["hauora-300", "sans"],
+        hauora_md: ["hauora-500", "sans"],
       },
     },
   },

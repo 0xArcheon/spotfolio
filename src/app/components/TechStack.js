@@ -105,7 +105,7 @@ function TechStack() {
           transition: "background 0.5s easeOut",
         }}
       ></div>
-      <div className="title">Technology Stack</div>
+      <div className="title text-xl font-medium">Technology Stack</div>
       <div className="category text-xs flex gap-2 mt-4">
         <button
           className={`rounded-xl p-2 bg-clip-padding backdrop-filter backdrop-blur-3xl bg-opacity-30 ${

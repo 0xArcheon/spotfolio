@@ -34,7 +34,7 @@ function LinksSection() {
   return (
     <main className="linkssection flex p-8 justify-between z-10">
       <div className="slideshow w-1/2">
-        <div className="title">Gallery</div>
+        <div className="title text-xl font-medium">Gallery</div>
         <img
           className="my-3 rounded-xl"
           src="https://cdn.pixabay.com/photo/2024/01/04/21/54/volcano-8488486_1280.jpg"
@@ -42,7 +42,7 @@ function LinksSection() {
         />
       </div>
       <div className="links w-2/5 px-8 h-full">
-        <div className="title">Get In Touch</div>
+        <div className="title text-xl font-medium">Get In Touch</div>
         <div
           className="flex my-3 flex-wrap gap-4 py-5 rounded-xl
         justify-center bg-slate-400 bg-clip-padding backdrop-filter backdrop-blur-3xl bg-opacity-10"

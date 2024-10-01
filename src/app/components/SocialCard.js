@@ -6,12 +6,11 @@ function SocialCard({ name, icon, link }) {
     <motion.a
       href={link}
       target="_blank"
-      className="socialcard rounded-xl p-2 w-5/12 aspect-square flex justify-center"
+      className="socialcard text-sm rounded-xl p-2 w-5/12 aspect-square flex justify-center"
       whileHover={{
         scale: 1.1,
         boxShadow:
           "0px 0px 20px 5px rgba(98, 208, 137, 0.8), 0px 0px 30px rgba(246, 205, 97, 0.8)",
-        background: "linear-gradient(135deg, #0f5745, #0c4b64)",
         color: "#fff",
         border: "2px solid rgba(98, 208, 137, 0.8)",
       }}
@@ -25,9 +24,9 @@ function SocialCard({ name, icon, link }) {
         border: { duration: 0.4 },
       }}
     >
-      <div className="w-1/2 flex justify-around flex-col">
+      <div className="w-1/2 flex justify-around flex-col items-center">
         <img src={icon} alt="" className="" />
-        <div>{name}</div>
+        <div className="">{name}</div>
       </div>
     </motion.a>
   );

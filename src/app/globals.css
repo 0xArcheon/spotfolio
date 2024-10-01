@@ -3,21 +3,28 @@
 @tailwind utilities;
 
 @layer base {
+
     @font-face {
-        font-family: 'outfit';
+        font-family: 'hauora-300';
         font-style: normal;
-        font-weight: 400;
+        font-weight: 300;
         font-display: swap;
-        src: url(../../public/fonts/Outfit.ttf) format('ttf');
+        src: url(../../public/fonts/hauora-300.ttf) format('ttf');
     }
 
-    ;
+    @font-face {
+        font-family: 'hauora-500';
+        font-style: normal;
+        font-weight: 500;
+        font-display: swap;
+        src: url(../../public/fonts/hauora-500.ttf) format('ttf');
+    }
 
     @font-face {
-        font-family: 'switzer';
+        font-family: 'hauora-700';
         font-style: normal;
-        font-weight: 400;
+        font-weight: 700;
         font-display: swap;
-        src: url(../../public/fonts/Switzer.ttf) format('ttf');
+        src: url(../../public/fonts/hauora-700.ttf) format('ttf');
     }
 }
