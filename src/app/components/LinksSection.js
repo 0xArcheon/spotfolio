@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import SocialCard from "./SocialCard";
+import ExpCard from "./ExpCard";
 
 const socials = [
   {
@@ -24,23 +25,10 @@ const socials = [
   },
 ];
 
-const images = [
-  "https://images.pexels.com/photos/1128797/pexels-photo-1128797.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-  "https://images.pexels.com/photos/247599/pexels-photo-247599.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-  "https://cdn.pixabay.com/photo/2024/01/04/21/54/volcano-8488486_1280.jpg",
-];
-
 function LinksSection() {
   return (
     <main className="linkssection flex p-8 justify-between z-10">
-      <div className="slideshow w-1/2">
-        <div className="title text-xl font-medium">Gallery</div>
-        <img
-          className="my-3 rounded-xl"
-          src="https://cdn.pixabay.com/photo/2024/01/04/21/54/volcano-8488486_1280.jpg"
-          alt=""
-        />
-      </div>
+      <ExpCard />
       <div className="links w-2/5 px-8 h-full">
         <div className="title text-xl font-medium">Get In Touch</div>
         <div

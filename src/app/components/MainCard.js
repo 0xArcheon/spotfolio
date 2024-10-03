@@ -39,7 +39,6 @@ function MainCard() {
         background: "rgba(255, 255, 255, 0.1)",
       }}
     >
-      {/* Cursor radius glow effect with radius set to 30% */}
       <div
         className="absolute pointer-events-none"
         style={{
@@ -47,7 +46,7 @@ function MainCard() {
           left: 0,
           width: "100%",
           height: "100%",
-          background: `radial-gradient(circle at ${mousePosition.x}px ${mousePosition.y}px, rgba(98, 208, 137, 0.5), transparent 40%)`,
+          background: `radial-gradient(circle at ${mousePosition.x}px ${mousePosition.y}px, rgba(98, 208, 137, 0.6), transparent 40%)`,
           transition: "background 8s ease-out",
         }}
       ></div>

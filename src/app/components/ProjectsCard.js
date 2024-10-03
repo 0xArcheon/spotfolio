@@ -4,7 +4,7 @@ function ProjectsCard({ data, motion }) {
   return (
     <motion.div
       variants={{ hidden: { opacity: 0 }, show: { opacity: 1 } }}
-      className="projectscard rounded-md p-6 hover:bg-gray-800 aspect-square relative"
+      className="projectscard rounded-md p-6 hover:bg-slate-400 hover:bg-clip-padding hover:backdrop-filter hover:backdrop-blur-3xl hover:bg-opacity-10 aspect-square relative"
       whileHover="hover"
     >
       <div className="relative h-60 w-60">
@@ -23,7 +23,7 @@ function ProjectsCard({ data, motion }) {
           transition={{ duration: 0.3, ease: "easeInOut" }}
         >
           <a href={data.link} target="_blank">
-            <img src="/code-branch.png" alt="" className="h-10 w-10" />
+            <img src="/code-branch.png" alt="" className="h-7 w-7" />
           </a>
         </motion.div>
       </div>
