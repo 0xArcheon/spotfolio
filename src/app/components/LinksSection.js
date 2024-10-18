@@ -27,9 +27,9 @@ const socials = [
 
 function LinksSection() {
   return (
-    <main className="linkssection flex p-8 justify-between z-10">
+    <main className="linkssection flex justify-between z-10">
       <ExpCard />
-      <div className="links w-2/5 px-8 h-full">
+      <div className="links w-1/3 h-full">
         <div className="title text-xl font-medium">Get In Touch</div>
         <div
           className="flex my-3 flex-wrap gap-4 py-5 rounded-xl

@@ -1,11 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 
 function ProjectsCard({ data, motion }) {
+  const [isExpanded, setIsExpanded] = useState(false);
+
   return (
     <motion.div
       variants={{ hidden: { opacity: 0 }, show: { opacity: 1 } }}
       className="projectscard rounded-md p-6 hover:bg-slate-400 hover:bg-clip-padding hover:backdrop-filter hover:backdrop-blur-3xl hover:bg-opacity-10 aspect-square relative"
       whileHover="hover"
+      onClick={() => setIsExpanded(!isExpanded)}
     >
       <div className="relative h-60 w-60">
         <img

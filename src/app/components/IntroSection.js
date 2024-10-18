@@ -2,18 +2,26 @@ import React from "react";
 import { motion } from "framer-motion";
 
 function IntroSection() {
+  const text =
+    "I'm Amlan, a passionate software developer from Guwahati, India. When I'm not coding, you'll find me immersed in indie rock music or watching films. I find peace and inspiration in the mountains, they're my ultimate therapist.".split(
+      " "
+    );
   return (
     <main className="introsection h-60 flex gap-8 p-8 z-10">
-      <motion.div
-        className="introtext p-8 w-3/4 rounded-xl text-justify font-normal"
-        initial={{ opacity: 0, y: 30 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1.5, ease: "easeOut" }}
-      >
-        I'm <span className="font-medium">Amlan</span>, a passionate{" "}
-        <span className="font-medium">Software Developer</span> by profession. I
-        spend my weekends watching films and listening to indie rock music.
-        Mountains are my therapist.
+      <motion.div className="introtext p-8 w-3/4 rounded-xl text-justify font-normal">
+        {text.map((el, i) => (
+          <motion.span
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{
+              duration: 0.1,
+              delay: i / 15,
+            }}
+            key={i}
+          >
+            {el}{" "}
+          </motion.span>
+        ))}
       </motion.div>
       <div className="photo rounded-xl">
         <img
