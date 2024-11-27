@@ -10,7 +10,7 @@ function ExpCard() {
         className="expcard p-5 rounded-xl flex flex-col h-full
         justify-around bg-slate-400 bg-clip-padding backdrop-filter backdrop-blur-3xl bg-opacity-10 my-3"
       >
-        <div className="flex gap-5 items-center justify-between">
+        <div className="flex gap-5 items-center justify-between transform hover:scale-110 hover:-translate-y-2 transition duration-300 ease-in-out">
           <div className="position font-semibold flex items-center gap-2">
             <img src="./dev.png" alt="" className="h-8 invert" />
             Software Developer
@@ -25,7 +25,7 @@ function ExpCard() {
             </div>
           </div>
         </div>
-        <div className="flex gap-5 items-center justify-between">
+        <div className="flex gap-5 items-center justify-between transform hover:scale-110 hover:-translate-y-2 transition duration-300 ease-in-out">
           <div className="position font-semibold flex items-center gap-2">
             <img src="./team-leader.png" alt="" className="h-8 invert" />
             Lead Support Engineer
@@ -40,7 +40,7 @@ function ExpCard() {
             </div>
           </div>
         </div>
-        <div className="flex gap-5 items-center justify-between">
+        <div className="flex gap-5 items-center justify-between transform hover:scale-110 hover:-translate-y-2 transition duration-300 ease-in-out">
           <div className="position font-semibold flex items-center gap-2">
             <img src="./support.png" alt="" className="h-8 invert" />
             Application Support Engineer

@@ -18,10 +18,11 @@ const socials = [
     icon: "mail.svg",
     link: "mailto:imamlan04@gmail.com",
   },
+
   {
-    name: "Resume",
-    icon: "download.svg",
-    link: "https://drive.google.com/file/d/1pdZDsgwONU3R7gWPi-o9pWeBK_kgxbCV/view",
+    name: "Letterboxd",
+    icon: "letterboxd.svg",
+    link: "https://;letterboxd.com/imamlan03",
   },
 ];
 

@@ -10,16 +10,19 @@
   },
   "dependencies": {
     "clsx": "^2.1.1",
-    "framer-motion": "^11.5.4",
+    "framer-motion": "^11.11.17",
     "lucide-react": "^0.453.0",
-    "next": "^14.2.13",
+    "next": "^15.0.3",
     "react": "^18",
     "react-dom": "^18",
-    "tailwind-merge": "^2.5.4",
+    "react-tooltip": "^5.28.0",
+    "tailwind-merge": "^2.5.5",
     "tailwind-scrollbar": "^3.1.0",
     "tailwindcss-animate": "^1.0.7"
   },
   "devDependencies": {
+    "@types/node": "22.10.0",
+    "@types/react": "18.3.12",
     "eslint": "^8",
     "eslint-config-next": "14.2.7",
     "postcss": "^8",

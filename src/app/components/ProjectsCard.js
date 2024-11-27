@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Tooltip } from "react-tooltip";
 
 function ProjectsCard({ data, motion }) {
   const [isExpanded, setIsExpanded] = useState(false);
@@ -25,13 +26,14 @@ function ProjectsCard({ data, motion }) {
           }}
           transition={{ duration: 0.3, ease: "easeInOut" }}
         >
-          <a href={data.link} target="_blank">
+          <a href={data.link} target="_blank" id="github">
             <img src="/code-branch.png" alt="" className="h-7 w-7" />
           </a>
         </motion.div>
       </div>
 
       <div className="name py-2">{data.name}</div>
+      <Tooltip anchorSelect="#github" content="View Source Code" />
     </motion.div>
   );
 }
