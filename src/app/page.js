@@ -1,3 +1,4 @@
+"use client";
 import Navbar from "./components/Navbar.js";
 import MainCard from "./components/MainCard.js";
 import RightCard from "./components/RightCard.js";
