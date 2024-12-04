@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import * as motion from "framer-motion/client";
 import { easeOut } from "framer-motion";
 
-function TechStack() {
+function TechStack({ framework, language, database }) {
   const [tech, setTech] = useState("language");
   const [dimensions, setDimensions] = useState({ width: 0, height: 0 });
   const [mousePosition, setMousePosition] = useState({
@@ -24,28 +24,6 @@ function TechStack() {
   const handleMouseLeave = () => {
     setMousePosition({ x: dimensions.width, y: 0 });
   };
-
-  const framework = [
-    { name: "React", icon: "react.png" },
-    { name: "Next.JS", icon: "nextjs.svg" },
-    { name: "Laravel", icon: "lara.png" },
-    { name: "Node JS", icon: "developer.png" },
-    { name: "Express", icon: "express.svg" },
-  ];
-
-  const language = [
-    { name: "Javascript", icon: "js.svg" },
-    { name: "PHP", icon: "php.svg" },
-    { name: "Java", icon: "java.svg" },
-    { name: "HTML", icon: "html.png" },
-  ];
-
-  const database = [
-    { name: "MongoDB", icon: "mongo.svg" },
-    { name: "PostgreSQL", icon: "pgsql.png" },
-    { name: "MySQL", icon: "mysql.png" },
-  ];
-
   // Animation settings
   const containerVariants = {
     hidden: { opacity: 0 },

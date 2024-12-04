@@ -27,6 +27,28 @@ function page() {
     "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi consectetur rerum harum magni ab earum consequuntur odit laboriosam magnam esse nobis fugiat, officiis deserunt pariatur! Aliquam dignissimos exercitationem magni nam!".split(
       " "
     );
+
+  const framework = [
+    { name: "React", icon: "react.png" },
+    { name: "Next.JS", icon: "nextjs.svg" },
+    { name: "Laravel", icon: "lara.png" },
+    { name: "Node JS", icon: "developer.png" },
+    { name: "Express", icon: "express.svg" },
+  ];
+
+  const language = [
+    { name: "Javascript", icon: "js.svg" },
+    { name: "PHP", icon: "php.svg" },
+    { name: "Java", icon: "java.svg" },
+    { name: "HTML", icon: "html.png" },
+  ];
+
+  const database = [
+    { name: "MongoDB", icon: "mongo.svg" },
+    { name: "PostgreSQL", icon: "pgsql.png" },
+    { name: "MySQL", icon: "mysql.png" },
+  ];
+
   return (
     <div className="flex h-max">
       <motion.main
@@ -54,6 +76,11 @@ function page() {
             transition: "background 8s ease-out",
           }}
         ></div>
+        <div className="navbuttons flex gap-2 p-3 relative z-10">
+          <button className="h-10">
+            <img src="../back.svg" alt="" className="h-full" />
+          </button>
+        </div>
         <main className="introsection h-60 flex gap-8 p-8 z-10">
           <motion.div className="introtext p-8 w-3/4 rounded-xl text-justify font-normal">
             {text.map((el, i) => (
@@ -80,7 +107,11 @@ function page() {
         </main>
         <Two />
       </motion.main>
-      <TechStack />
+      <TechStack
+        framework={framework}
+        database={database}
+        language={language}
+      />
     </div>
   );
 }

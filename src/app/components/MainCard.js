@@ -50,15 +50,6 @@ function MainCard() {
           transition: "background 8s ease-out",
         }}
       ></div>
-
-      <div className="navbuttons flex gap-2 p-3 relative z-10">
-        <button className="h-10">
-          <img src="back.svg" alt="" className="h-full" />
-        </button>
-        <button className="h-10">
-          <img src="forward.svg" alt="" className="h-full" />
-        </button>
-      </div>
       <IntroSection />
       <LinksSection />
       <ProjectSection />
