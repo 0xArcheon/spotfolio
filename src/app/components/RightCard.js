@@ -11,7 +11,7 @@ function RightCard() {
       ></div>
       <NowPlaying />
       <TechStack />
-      <div className="flex mt-10 justify-center items-center">
+      <div className="flex mt-10 justify-center items-center w-full">
         <Button/>
       </div>
     </div>

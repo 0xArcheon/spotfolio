@@ -91,7 +91,7 @@ function TechStack() {
         overflow: "hidden",
         background: "rgba(255, 255, 255, 0.1)",
       }}
-      className="techstack flex flex-col mt-10 rounded-xl p-4 gap-2
+      className="techstack flex flex-col mt-10 rounded-xl p-4 gap-2 h-max
     bg-slate-500 bg-clip-padding backdrop-filter backdrop-blur-3xl bg-opacity-30"
     >
       <div

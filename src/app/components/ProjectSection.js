@@ -36,7 +36,7 @@ function ProjectSection() {
   const isInView = useInView(ref, { once: true });
 
   return (
-    <div className="projectsection p-8 z-10">
+    <div className="projectsection p-8 z-10 group relative overflow-hidden">
       <div className="title text-xl font-medium">Projects</div>
       <motion.div
         ref={ref}
@@ -53,7 +53,7 @@ function ProjectSection() {
         }}
         initial="hidden"
         animate={isInView ? "show" : "hidden"}
-        className="container flex overflow-x-scroll scrollbar-thumb-rounded-xl scrollbar-corner-rounded-xl 
+        className="container flex overflow-x-hidden group-hover:overflow-x-auto scrollbar-thumb-rounded-xl scrollbar-corner-rounded-xl  
         scrollbar-track-rounded-xl scrollbar-thin scrollbar-track-slate-900 scrollbar-thumb-fern-200"
       >
         {Projects.map((item, index) => (
