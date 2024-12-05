@@ -5,7 +5,7 @@ import * as motion from "framer-motion/client";
 import { easeOut } from "framer-motion";
 import CnGallery from "@/app/components/gallery/CnGallery";
 
-function page() {
+export default function Page() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [dimensions, setDimensions] = useState({ width: 0, height: 0 });
 
@@ -115,5 +115,3 @@ function page() {
     </div>
   );
 }
-
-export default page;

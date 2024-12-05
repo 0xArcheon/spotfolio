@@ -3,7 +3,7 @@ import { Tooltip } from "react-tooltip";
 
 function ProjectsCard({ data, motion }) {
   const [isExpanded, setIsExpanded] = useState(false);
-
+  const projectId = 1; //currently hardcoded
   return (
     <motion.div
       variants={{ hidden: { opacity: 0 }, show: { opacity: 1 } }}
@@ -11,7 +11,7 @@ function ProjectsCard({ data, motion }) {
       whileHover="hover"
       onClick={() => setIsExpanded(!isExpanded)}
     >
-      <a href="/projects/1" className="block relative">
+      <a href={`/projects/${projectId}`} className="block relative">
         <div className="relative h-60 w-60">
           <img
             className="rounded-md h-full w-full object-cover"
