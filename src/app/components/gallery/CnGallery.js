@@ -37,7 +37,7 @@ const items = [
   },
 ];
 
-const Two = () => {
+const CnGallery = () => {
   const [activeItem, setActiveItem] = useState(null);
 
   const allElements = items.flatMap((column) => column.elements);
@@ -154,4 +154,4 @@ const Gallery = (props) => {
   );
 };
 
-export default Two;
+export default CnGallery;

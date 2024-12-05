@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import TechStack from "@/app/components/TechStack";
 import * as motion from "framer-motion/client";
 import { easeOut } from "framer-motion";
-import Two from "@/app/components/gallery/two";
+import CnGallery from "@/app/components/gallery/CnGallery";
 
 function page() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -105,7 +105,7 @@ function page() {
             />
           </div>
         </main>
-        <Two />
+        <CnGallery />
       </motion.main>
       <TechStack
         framework={framework}
