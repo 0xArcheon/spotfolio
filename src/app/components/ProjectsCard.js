@@ -11,7 +11,7 @@ function ProjectsCard({ data, motion }) {
       whileHover="hover"
       onClick={() => setIsExpanded(!isExpanded)}
     >
-      <a href="/projects/1">
+      <a href="/projects/1" className="block relative">
         <div className="relative h-60 w-60">
           <img
             className="rounded-md h-full w-full object-cover"
@@ -27,15 +27,25 @@ function ProjectsCard({ data, motion }) {
             }}
             transition={{ duration: 0.3, ease: "easeInOut" }}
           >
-            <a href={data.link} target="_blank" id="github">
-              <img src="/code-branch.png" alt="" className="h-7 w-7" />
-            </a>
+            <button
+              aria-label="View Source Code"
+              onClick={(e) => {
+                e.stopPropagation();
+                window.open(data.link, "_blank");
+              }}
+              id="github"
+            >
+              <img
+                src="/code-branch.png"
+                alt="View Source Code"
+                className="h-7 w-7"
+              />
+            </button>
           </motion.div>
         </div>
-
         <div className="name py-2">{data.name}</div>
-        <Tooltip anchorSelect="#github" content="View Source Code" />
       </a>
+      <Tooltip anchorSelect="#github" content="View Source Code" />
     </motion.div>
   );
 }
