@@ -5,7 +5,6 @@ import { useRef, useState, useEffect } from "react";
 
 function ProjectSection() {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true });
   const [projects, setProjects] = useState([]);
   const [error, setError] = useState(null);
 
@@ -54,8 +53,6 @@ function ProjectSection() {
             },
           },
         }}
-        initial="hidden"
-        animate={isInView ? "show" : "hidden"}
         className="container flex overflow-x-hidden group-hover:overflow-x-auto scrollbar-thumb-rounded-xl scrollbar-corner-rounded-xl  
         scrollbar-track-rounded-xl scrollbar-thin scrollbar-track-slate-900 scrollbar-thumb-fern-200"
       >

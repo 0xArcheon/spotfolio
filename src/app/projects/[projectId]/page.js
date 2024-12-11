@@ -1,13 +1,17 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import TechStack from "@/app/components/TechStack";
 import * as motion from "framer-motion/client";
 import { easeOut } from "framer-motion";
 import CnGallery from "@/app/components/gallery/CnGallery";
 
-export default function Page() {
+export default function Page({ params }) {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [dimensions, setDimensions] = useState({ width: 0, height: 0 });
+  const [project, setProjects] = useState();
+  const [error, setError] = useState(null);
+  const [isLoading, setIsLoading] = useState(true);
+  const { projectId } = React.use(params);
 
   // Track mouse position and card dimensions
   const handleMouseMove = (e) => {
@@ -23,31 +27,33 @@ export default function Page() {
     setMousePosition({ x: 0, y: 0 });
   };
 
-  const text =
-    "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi consectetur rerum harum magni ab earum consequuntur odit laboriosam magnam esse nobis fugiat, officiis deserunt pariatur! Aliquam dignissimos exercitationem magni nam!".split(
-      " "
-    );
+  useEffect(() => {
+    // Only fetch if projectId exists
+    if (!projectId) {
+      setError("No project ID provided");
+      setIsLoading(false);
+      return;
+    }
 
-  const framework = [
-    { name: "React", icon: "react.png" },
-    { name: "Next.JS", icon: "nextjs.svg" },
-    { name: "Laravel", icon: "lara.png" },
-    { name: "Node JS", icon: "developer.png" },
-    { name: "Express", icon: "express.svg" },
-  ];
+    const fetchProjectDetails = async () => {
+      try {
+        setIsLoading(true);
+        const response = await fetch(`/api/projects/${projectId}`);
 
-  const language = [
-    { name: "Javascript", icon: "js.svg" },
-    { name: "PHP", icon: "php.svg" },
-    { name: "Java", icon: "java.svg" },
-    { name: "HTML", icon: "html.png" },
-  ];
+        if (!response.ok) {
+          throw new Error("Failed to fetch project details");
+        }
+        const data = await response.json();
+        setProjects(data);
+        setIsLoading(false);
+      } catch (err) {
+        setError(err.message || "An unknown error occurred");
+        setIsLoading(false);
+      }
+    };
 
-  const database = [
-    { name: "MongoDB", icon: "mongo.svg" },
-    { name: "PostgreSQL", icon: "pgsql.png" },
-    { name: "MySQL", icon: "mysql.png" },
-  ];
+    fetchProjectDetails();
+  }, [projectId]);
 
   return (
     <div className="flex h-max">
@@ -78,24 +84,19 @@ export default function Page() {
         ></div>
         <div className="navbuttons flex gap-2 p-3 relative z-10">
           <button className="h-10">
-            <img src="../back.svg" alt="" className="h-full" />
+            <a href="/">
+              <img src="../back.svg" alt="" className="h-full" />
+            </a>
           </button>
+        </div>
+        <div className="font-bold text-2xl px-2 py-4">
+          {isLoading && "Loading..."}
+          {error && <span className="text-red-500">{error}</span>}
+          {project && project.name}
         </div>
         <main className="introsection h-60 flex gap-8 p-8 z-10">
           <motion.div className="introtext p-8 w-3/4 rounded-xl text-justify font-normal">
-            {text.map((el, i) => (
-              <motion.span
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{
-                  duration: 0.1,
-                  delay: i / 15,
-                }}
-                key={i}
-              >
-                {el}{" "}
-              </motion.span>
-            ))}
+            {project?.description || "No description available"}
           </motion.div>
           <div className="photo rounded-xl">
             <img
@@ -107,11 +108,6 @@ export default function Page() {
         </main>
         <CnGallery />
       </motion.main>
-      <TechStack
-        framework={framework}
-        database={database}
-        language={language}
-      />
     </div>
   );
 }
