@@ -108,6 +108,22 @@ export default function Page({ params }) {
         </main>
         <CnGallery />
       </motion.main>
+      <div className="right">
+        {isLoading ? (
+          <div></div>
+        ) : error ? (
+          <div className="text-red-500">{error}</div>
+        ) : (
+          project &&
+          project.technologies && (
+            <TechStack
+              framework={project.technologies.framework}
+              language={project.technologies.language}
+              database={project.technologies.database}
+            />
+          )
+        )}
+      </div>
     </div>
   );
 }

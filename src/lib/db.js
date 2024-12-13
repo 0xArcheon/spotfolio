@@ -1,3 +1,5 @@
+import { icons } from "lucide-react";
+
 export const projects = [
   {
     projectId: "atwsss",
@@ -8,9 +10,9 @@ export const projects = [
       alt: "Project Logo",
     },
     technologies: {
-      languages: ["php"],
-      frameworks: ["Laravel"],
-      databases: ["postgreSQL"],
+      language: [{ name: "PHP", icon: "php.svg" }],
+      framework: [{ name: "Laravel", icon: "lara.png" }],
+      database: [{ name: "PostgreSQL", icon: "pgsql.png" }],
     },
     images: [
       {
@@ -41,9 +43,13 @@ export const projects = [
       alt: "Project Logo",
     },
     technologies: {
-      languages: ["php"],
-      frameworks: ["Laravel"],
-      databases: ["postgreSQL"],
+      language: [{ name: "Javascript", icon: "js.svg" }],
+      framework: [
+        { name: "React JS", icon: "js.svg" },
+        { name: "Node JS", icon: "js.svg" },
+        { name: "Express", icon: "js.svg" },
+      ],
+      database: [{ name: "MongoDB", icon: "js.svg" }],
     },
     images: [
       {
@@ -74,9 +80,9 @@ export const projects = [
       alt: "Project Logo",
     },
     technologies: {
-      languages: ["php"],
-      frameworks: ["Laravel"],
-      databases: ["postgreSQL"],
+      language: [{ name: "Javascript", icon: "js.svg" }],
+      framework: [{ name: "React JS", icon: "js.svg" }],
+      database: [{ name: "Firebase", icon: "js.svg" }],
     },
     images: [
       {

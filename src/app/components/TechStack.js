@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import * as motion from "framer-motion/client";
 import { easeOut } from "framer-motion";
 
-function TechStack({ framework, language, database }) {
+function TechStack({ framework = [], language = [], database = [] }) {
   const [tech, setTech] = useState("language");
   const [dimensions, setDimensions] = useState({ width: 0, height: 0 });
   const [mousePosition, setMousePosition] = useState({
@@ -112,11 +112,11 @@ function TechStack({ framework, language, database }) {
       </div>
 
       <motion.div
-        key={tech} // The key changes when `tech` changes, triggering the reanimation
+        key={tech}
         className="tech flex flex-col gap-3"
         initial="hidden"
         animate="visible"
-        variants={containerVariants} // The parent that handles stagger
+        variants={containerVariants}
       >
         {tech === "language" && renderTechItems(language)}
         {tech === "framework" && renderTechItems(framework)}
