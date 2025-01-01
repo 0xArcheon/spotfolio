@@ -28,7 +28,6 @@ export default function Page({ params }) {
   };
 
   useEffect(() => {
-    // Only fetch if projectId exists
     if (!projectId) {
       setError("No project ID provided");
       setIsLoading(false);
@@ -56,7 +55,7 @@ export default function Page({ params }) {
   }, [projectId]);
 
   return (
-    <div className="flex h-max">
+    <div className="flex min-h-screen">
       <motion.main
         initial={{ opacity: 0, x: -100 }}
         animate={{ opacity: 1, x: 0 }}
@@ -106,9 +105,9 @@ export default function Page({ params }) {
             />
           </div>
         </main>
-        <CnGallery />
+        {/* <CnGallery images={project.images} /> */}
       </motion.main>
-      <div className="right">
+      <div className="right rightcard w-1/3 pr-32 relative">
         {isLoading ? (
           <div></div>
         ) : error ? (

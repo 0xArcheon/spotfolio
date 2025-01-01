@@ -14,7 +14,7 @@ const socials = [
     link: "https://github.com/0xArcheon",
   },
   {
-    name: "e-mail",
+    name: "email",
     icon: "mail.svg",
     link: "mailto:imamlan04@gmail.com",
   },
@@ -22,19 +22,19 @@ const socials = [
   {
     name: "Letterboxd",
     icon: "letterboxd.svg",
-    link: "https://;letterboxd.com/imamlan03",
+    link: "https://letterboxd.com/imamlan03",
   },
 ];
 
 function LinksSection() {
   return (
-    <main className="linkssection flex justify-between z-10">
+    <main className="linkssection flex justify-between z-10 items-center">
       <ExpCard />
       <div className="links w-1/3 h-full">
         <div className="title text-xl font-medium">Get In Touch</div>
         <div
-          className="flex my-3 flex-wrap gap-4 py-5 rounded-xl
-        justify-center bg-slate-400 bg-clip-padding backdrop-filter backdrop-blur-3xl bg-opacity-10"
+          className="flex my-3 flex-wrap gap-4 py-5 rounded-xl h-full 
+      justify-center bg-slate-400 bg-clip-padding backdrop-filter backdrop-blur-3xl bg-opacity-10"
         >
           {socials.map((item, index) => {
             return (

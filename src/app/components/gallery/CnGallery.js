@@ -37,7 +37,7 @@ const items = [
   },
 ];
 
-const CnGallery = () => {
+const CnGallery = ({ images }) => {
   const [activeItem, setActiveItem] = useState(null);
 
   const allElements = items.flatMap((column) => column.elements);

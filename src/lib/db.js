@@ -1,10 +1,8 @@
-import { icons } from "lucide-react";
-
 export const projects = [
   {
     projectId: "atwsss",
     name: "ATWSSS",
-    description: "lorem",
+    description: "A digital platform for Assam’s ATWSS Scheme to streamline registration and social security services for workers in the unorganized transport sector of Assam State.",
     logo: {
       url: "",
       alt: "Project Logo",
@@ -16,20 +14,20 @@ export const projects = [
     },
     images: [
       {
-        url: "https://images.pexels.com/photos/1123972/pexels-photo-1123972.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-        alt: "Project Overview Image 1",
+        url: "/snaps/ATWSSS/Homepage.png",
+        alt: "Home page",
       },
       {
-        url: "https://images.pexels.com/photos/326055/pexels-photo-326055.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-        alt: "Project Dashboard Image",
+        url: "/snaps/ATWSSS/Registration.png",
+        alt: "Registration page",
       },
       {
-        url: "https://images.pexels.com/photos/39284/macbook-apple-imac-computer-39284.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-        alt: "Project Interface Image",
+        url: "/snaps/ATWSSS/Basic-details.png",
+        alt: "Worker details",
       },
       {
-        url: "https://images.pexels.com/photos/7974/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-        alt: "Project Workspace Image",
+        url: "/snaps/ATWSSS/Documents.png",
+        alt: "Documents Upload page",
       },
     ],
     link: "",
@@ -37,7 +35,7 @@ export const projects = [
   {
     projectId: "zenmanage",
     name: "ZenManage",
-    description: "lorem",
+    description: "A web application for effectively managing contractual employees and ongoing projects under NIC Assam division, improving operational efficiency and streamlining workflows.",
     logo: {
       url: "",
       alt: "Project Logo",
@@ -53,20 +51,20 @@ export const projects = [
     },
     images: [
       {
-        url: "https://images.pexels.com/photos/1123972/pexels-photo-1123972.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-        alt: "Project Overview Image 1",
+        url: "/snaps/Zenmanage/Dash-Man.png",
+        alt: "Main Dashboard",
       },
       {
-        url: "https://images.pexels.com/photos/326055/pexels-photo-326055.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-        alt: "Project Dashboard Image",
+        url: "/snaps/Zenmanage/Regform.png",
+        alt: "Admin Dashboard Image",
       },
       {
-        url: "https://images.pexels.com/photos/39284/macbook-apple-imac-computer-39284.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-        alt: "Project Interface Image",
+        url: "/snaps/Zenmanage/Profile.png",
+        alt: "Employee Profile Page",
       },
       {
-        url: "https://images.pexels.com/photos/7974/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-        alt: "Project Workspace Image",
+        url: "/snaps/Zenmanage/Regform.png",
+        alt: "Employee Registration Form",
       },
     ],
     link: "",
@@ -74,7 +72,7 @@ export const projects = [
   {
     projectId: "vyse",
     name: "Vyse Marketplace",
-    description: "",
+    description: "Vyse is a peer-to-peer online marketplace for buying and selling any kind of products or services. Vyse makes it so easy to connect people to buy, sell or exchange used goods and services. It’s completely free to buy or sell products on Vyse without any middleman fees",
     logo: {
       url: "",
       alt: "Project Logo",
@@ -86,20 +84,20 @@ export const projects = [
     },
     images: [
       {
-        url: "https://images.pexels.com/photos/1123972/pexels-photo-1123972.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-        alt: "Project Overview Image 1",
+        url: "/snaps/Vyse/home.png",
+        alt: "Project Homepage",
       },
       {
-        url: "https://images.pexels.com/photos/326055/pexels-photo-326055.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-        alt: "Project Dashboard Image",
+        url: "/snaps/Zenmanage/home-featured.png",
+        alt: "Featured section",
       },
       {
-        url: "https://images.pexels.com/photos/39284/macbook-apple-imac-computer-39284.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-        alt: "Project Interface Image",
+        url: "/snaps/Zenmanage/Listings.png",
+        alt: "Product Listings",
       },
       {
-        url: "https://images.pexels.com/photos/7974/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-        alt: "Project Workspace Image",
+        url: "/snaps/Zenmanage/product.png",
+        alt: "Product page",
       },
     ],
     link: "",
