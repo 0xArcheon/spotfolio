@@ -6,7 +6,7 @@ function SocialCard({ name, icon, link }) {
     <motion.a
       href={link}
       target="_blank"
-      className="socialcard text-sm rounded-full p-2 h-full w-5/12 aspect-square flex justify-center z-10"
+      className="socialcard text-sm rounded-full h-max w-5/12 aspect-square flex justify-center z-10"
       transition={{
         type: "spring",
         stiffness: 300,
@@ -21,7 +21,7 @@ function SocialCard({ name, icon, link }) {
           whileHover={{ rotate: 360, scale: [1, 0.5, 1] }}
           transition={{ duration: 0.8, ease: "easeInOut" }}
         />
-        <div className="">{name}</div>
+        <div className="text-xs">{name}</div>
       </div>
     </motion.a>
   );

@@ -28,13 +28,13 @@ const socials = [
 
 function LinksSection() {
   return (
-    <main className="linkssection flex justify-between z-10 items-center">
+    <main className="linkssection flex justify-between z-10 items-center h-80">
       <ExpCard />
-      <div className="links w-1/3 h-full">
+      <div className="links w-1/3 h-full flex flex-col">
         <div className="title text-xl font-medium">Get In Touch</div>
         <div
-          className="flex my-3 flex-wrap gap-4 py-5 rounded-xl h-full 
-      justify-center bg-slate-400 bg-clip-padding backdrop-filter backdrop-blur-3xl bg-opacity-10"
+          className="test flex my-3 flex-wrap p-5 rounded-xl flex-grow items-center
+          justify-center bg-slate-400 bg-clip-padding backdrop-filter backdrop-blur-3xl bg-opacity-10"
         >
           {socials.map((item, index) => {
             return (
