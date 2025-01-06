@@ -17,8 +17,8 @@ function ExpCard() {
             </div>
             <div>
               <div>Software Developer</div>
-              <div className="duration text-xs opacity-60">
-                Aug 2024 - Present
+              <div className="duration text-xs opacity-60 rounded-2xl border-2 w-fit px-2 bg-slate-100 text-slate-800">
+                Aug 2024-Present
               </div>
             </div>
           </div>
@@ -36,8 +36,8 @@ function ExpCard() {
             </div>
             <div>
               <div>Lead Support Engineer</div>
-              <div className="duration text-xs opacity-60">
-                Dec 2023 - Jul 2024
+              <div className="duration text-xs opacity-60 rounded-2xl border-2 w-fit px-2 bg-slate-100 text-slate-800">
+                Dec 2023-Jul 2024
               </div>
             </div>
           </div>
@@ -55,8 +55,8 @@ function ExpCard() {
             </div>
             <div>
               <div>Application Support Engineer</div>
-              <div className="duration text-xs opacity-60">
-                Aug 2023 - Nov 2023
+              <div className="duration text-xs opacity-60 rounded-2xl border-2 w-fit px-2 bg-slate-100 text-slate-800">
+                Aug 2023-Nov 2023
               </div>
             </div>
           </div>
