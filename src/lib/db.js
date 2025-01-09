@@ -2,7 +2,8 @@ export const projects = [
   {
     projectId: "atwsss",
     name: "ATWSSS",
-    description: "A digital platform for Assam’s ATWSS Scheme to streamline registration and social security services for workers in the unorganized transport sector of Assam State.",
+    description:
+      "A digital platform for Assam’s ATWSS Scheme to streamline registration and social security services for workers in the unorganized transport sector of Assam State.",
     logo: {
       url: "",
       alt: "Project Logo",
@@ -35,7 +36,8 @@ export const projects = [
   {
     projectId: "zenmanage",
     name: "ZenManage",
-    description: "A web application for effectively managing contractual employees and ongoing projects under NIC Assam division, improving operational efficiency and streamlining workflows.",
+    description:
+      "A web application for effectively managing contractual employees and ongoing projects under NIC Assam division, improving operational efficiency and streamlining workflows.",
     logo: {
       url: "",
       alt: "Project Logo",
@@ -72,7 +74,8 @@ export const projects = [
   {
     projectId: "vyse",
     name: "Vyse Marketplace",
-    description: "Vyse is a peer-to-peer online marketplace for buying and selling any kind of products or services. Vyse makes it so easy to connect people to buy, sell or exchange used goods and services. It’s completely free to buy or sell products on Vyse without any middleman fees",
+    description:
+      "Vyse is a peer-to-peer online marketplace for buying and selling any kind of products or services. Vyse makes it so easy to connect people to buy, sell or exchange used goods and services. It’s completely free to buy or sell products on Vyse without any middleman fees",
     logo: {
       url: "",
       alt: "Project Logo",
@@ -88,15 +91,15 @@ export const projects = [
         alt: "Project Homepage",
       },
       {
-        url: "/snaps/Zenmanage/home-featured.png",
+        url: "/snaps/Vyse/home-featured.png",
         alt: "Featured section",
       },
       {
-        url: "/snaps/Zenmanage/Listings.png",
+        url: "/snaps/Vyse/Listings.png",
         alt: "Product Listings",
       },
       {
-        url: "/snaps/Zenmanage/product.png",
+        url: "/snaps/Vyse/product.png",
         alt: "Product page",
       },
     ],

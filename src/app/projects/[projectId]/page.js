@@ -60,7 +60,7 @@ export default function Page({ params }) {
         initial={{ opacity: 0, x: -100 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.5, ease: easeOut, delay: 0.2 }}
-        className="maincard flex w-2/3 h-fit mx-32 mr-8 mt-10 rounded-xl flex-col
+        className="maincard flex w-2/3 h-fit mx-28 mr-8 mt-10 rounded-xl flex-col
         bg-slate-500 bg-clip-padding backdrop-filter backdrop-blur-3xl bg-opacity-30 relative p-6"
         onMouseMove={handleMouseMove}
         onMouseLeave={handleMouseLeave}
@@ -81,33 +81,37 @@ export default function Page({ params }) {
             transition: "background 8s ease-out",
           }}
         ></div>
-        <div className="navbuttons flex gap-2 p-3 relative z-10">
+        <div className="navbuttons flex gap-2 p-2 relative z-10">
           <button className="h-10">
             <a href="/">
               <img src="../back.svg" alt="" className="h-full" />
             </a>
           </button>
         </div>
-        <div className="font-bold text-2xl px-2 py-4">
-          {isLoading && "Loading..."}
-          {error && <span className="text-red-500">{error}</span>}
-          {project && project.name}
-        </div>
-        <main className="introsection h-60 flex gap-8 p-8 z-10">
-          <motion.div className="introtext p-8 w-3/4 rounded-xl text-justify font-normal">
-            {project?.description || "No description available"}
-          </motion.div>
-          <div className="photo rounded-xl">
+        <div className="flex p-8 pt-2">
+          <div className="photo rounded-xl flex justify-center items-center">
             <img
               src="https://img.freepik.com/free-vector/colorful-initials-letter-t-logo-design_474888-4338.jpg?t=st=1733301400~exp=1733305000~hmac=413070d71bc532f6edc5fa1eff84942fb77fc2f9f5a9455ab8350753336de9a5&w=740"
               alt=""
-              className="h-full object-contain rounded-xl"
+              className="object-contain rounded-xl"
             />
           </div>
-        </main>
-        {/* <CnGallery images={project.images} /> */}
+          <div className="introsection flex flex-col gap-4 pl-8 z-10">
+            <div className="name z-10 text-4xl font-normal text-left">
+              {isLoading && "Loading Title..."}
+              {error && <span className="text-red-500">{error}</span>}
+              {project && project.name}
+            </div>
+            <div className="introtext rounded-xl text-justify font-normal">
+              {isLoading && "Loading description..."}
+              {error && <span className="text-red-500">{error}</span>}
+              {project && project.description}
+            </div>
+          </div>
+        </div>
+        {project ? <CnGallery images={project.images} /> : ""}
       </motion.main>
-      <div className="right rightcard w-1/3 pr-32 relative">
+      <div className="right rightcard w-1/3 mr-28 relative">
         {isLoading ? (
           <div></div>
         ) : error ? (

@@ -7,8 +7,11 @@ import * as motion from "framer-motion/client";
 import { easeOut } from "framer-motion";
 
 function MainCard() {
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [dimensions, setDimensions] = useState({ width: 0, height: 0 });
+  const [mousePosition, setMousePosition] = useState({
+    x: 700,
+    y: 0,
+  });
 
   // Track mouse position and card dimensions
   const handleMouseMove = (e) => {
@@ -21,7 +24,7 @@ function MainCard() {
   };
 
   const handleMouseLeave = () => {
-    setMousePosition({ x: 0, y: 0 });
+    setMousePosition({ x: dimensions.width, y: 0 });
   };
 
   return (
@@ -29,7 +32,7 @@ function MainCard() {
       initial={{ opacity: 0, x: -100 }}
       animate={{ opacity: 1, x: 0 }}
       transition={{ duration: 0.5, ease: easeOut, delay: 0.2 }}
-      className="maincard flex w-2/3 h-fit mx-32 mr-8 mt-10 rounded-xl flex-col
+      className="maincard flex w-2/3 h-fit mx-28 mr-8 mt-10 rounded-xl flex-col
         bg-slate-500 bg-clip-padding backdrop-filter backdrop-blur-3xl bg-opacity-30 relative p-6"
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
