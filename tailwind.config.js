@@ -71,9 +71,8 @@ module.exports = {
       fontFamily: {
         outfit: ["outfit", "sans-serif"],
         switzer: ["switzer", "sans"],
-        hauora: ["hauora-300", "sans"],
-        hauora_md: ["hauora-500", "sans"],
-        hauora_lg: ["hauora-700", "sans"],
+        chillax: ["Chillax", "sans"],
+        poppins: ["Poppins", "sans"],
       },
       borderRadius: {
         lg: "var(--radius)",

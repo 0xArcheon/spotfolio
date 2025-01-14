@@ -4,6 +4,7 @@ import TechStack from "@/app/components/TechStack";
 import * as motion from "framer-motion/client";
 import { easeOut } from "framer-motion";
 import CnGallery from "@/app/components/gallery/CnGallery";
+import Integration from "@/app/components/Integration";
 
 export default function Page({ params }) {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -97,7 +98,7 @@ export default function Page({ params }) {
             />
           </div>
           <div className="introsection flex flex-col gap-4 pl-8 z-10">
-            <div className="name z-10 text-4xl font-normal text-left">
+            <div className="name z-10 text-4xl font-poppins text-left">
               {isLoading && "Loading Title..."}
               {error && <span className="text-red-500">{error}</span>}
               {project && project.name}
@@ -126,6 +127,7 @@ export default function Page({ params }) {
             />
           )
         )}
+        {project?.integrations && <Integration data={project.integrations} />}
       </div>
     </div>
   );

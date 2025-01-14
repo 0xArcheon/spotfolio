@@ -13,6 +13,16 @@ export const projects = [
       framework: [{ name: "Laravel", icon: "lara.png" }],
       database: [{ name: "PostgreSQL", icon: "pgsql.png" }],
     },
+    integrations: [
+      {
+        type: "Payment Gateway",
+        value: "eGras",
+        link: "https://assamegras.gov.in/",
+      },
+      { type: "SMS Gateway", value: "AMTRON", link: "http://amtron.in/" },
+      { type: "Identity", value: "UIDAI", link: "https://uidai.gov.in/en/" },
+      { type: "Other", value: "eShram", link: "https://eshram.gov.in/" },
+    ],
     images: [
       {
         url: "/snaps/ATWSSS/Homepage.png",

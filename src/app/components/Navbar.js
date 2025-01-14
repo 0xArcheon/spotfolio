@@ -20,7 +20,8 @@ function Navbar() {
         initial={{ opacity: 0, x: +250 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.5, ease: easeOut, delay: 0.2 }}
-        href=""
+        target="_blank"
+        href="https://drive.google.com/file/d/1rMhwNUDgGqjtbdNm6T5gCX0b1-wi1C-b/view?usp=sharing"
         className="home h-12"
       >
         <Button />

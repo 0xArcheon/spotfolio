@@ -12,7 +12,7 @@ function IntroSection() {
         <img src="this-is-2.jpg" alt="" className="object-contain rounded-xl" />
       </div>
       <div className="introsection flex flex-col gap-4 pl-8 z-10">
-        <div className="name z-10 text-4xl font-normal text-left">
+        <div className="name z-10 text-4xl font-poppins text-left tracking-wider">
           Amlan Saikia
         </div>
         <motion.div className="introtext rounded-xl text-justify font-normal">

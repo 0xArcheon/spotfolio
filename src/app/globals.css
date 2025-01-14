@@ -4,27 +4,18 @@
 
 @layer base {
   @font-face {
-    font-family: "hauora-300";
+    font-family: "Chillax";
+    src: url("/fonts/Chillax.ttf") format("truetype");
+    font-weight: normal;
     font-style: normal;
-    font-weight: 300;
     font-display: swap;
-    src: url(../../public/fonts/hauora-300.ttf) format("ttf");
   }
-
   @font-face {
-    font-family: "hauora-500";
+    font-family: "Poppins";
+    src: url("/fonts/Poppins.ttf") format("truetype");
+    font-weight: normal;
     font-style: normal;
-    font-weight: 500;
     font-display: swap;
-    src: url(../../public/fonts/hauora-500.ttf) format("ttf");
-  }
-
-  @font-face {
-    font-family: "hauora-700";
-    font-style: normal;
-    font-weight: 700;
-    font-display: swap;
-    src: url("/public/fonts/hauora-700.ttf") format("truetype");
   }
   :root {
     --background: 0 0% 100%;
