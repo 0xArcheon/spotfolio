@@ -5,6 +5,7 @@ import * as motion from "framer-motion/client";
 import { easeOut } from "framer-motion";
 import CnGallery from "@/app/components/gallery/CnGallery";
 import Integration from "@/app/components/Integration";
+import BlurText from "@/app/components/text/BlurText";
 
 export default function Page({ params }) {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -26,6 +27,10 @@ export default function Page({ params }) {
 
   const handleMouseLeave = () => {
     setMousePosition({ x: 0, y: 0 });
+  };
+
+  const handleAnimationComplete = () => {
+    console.log("Animation completed!");
   };
 
   useEffect(() => {
@@ -104,9 +109,16 @@ export default function Page({ params }) {
               {project && project.name}
             </div>
             <div className="introtext rounded-xl text-justify font-normal">
+              <BlurText
+                text={project && project.description}
+                delay={50}
+                animateBy="words"
+                direction="top"
+                onAnimationComplete={handleAnimationComplete}
+                className="text-justify"
+              />
               {isLoading && "Loading description..."}
               {error && <span className="text-red-500">{error}</span>}
-              {project && project.description}
             </div>
           </div>
         </div>
