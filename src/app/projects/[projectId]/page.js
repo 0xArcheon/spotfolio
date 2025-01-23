@@ -61,7 +61,7 @@ export default function Page({ params }) {
   }, [projectId]);
 
   return (
-    <div className="flex min-h-screen">
+    <div className="flex min-h-screen justify-center max-w-screen-2xl px-20">
       <motion.main
         initial={{ opacity: 0, x: -100 }}
         animate={{ opacity: 1, x: 0 }}
@@ -95,13 +95,7 @@ export default function Page({ params }) {
           </button>
         </div>
         <div className="flex p-8 pt-2">
-          <div className="photo rounded-xl flex justify-center items-center">
-            <img
-              src="https://img.freepik.com/free-vector/colorful-initials-letter-t-logo-design_474888-4338.jpg?t=st=1733301400~exp=1733305000~hmac=413070d71bc532f6edc5fa1eff84942fb77fc2f9f5a9455ab8350753336de9a5&w=740"
-              alt=""
-              className="object-contain rounded-xl"
-            />
-          </div>
+          <div className="photo rounded-xl flex justify-center items-center"></div>
           <div className="introsection flex flex-col gap-4 pl-8 z-10">
             <div className="name z-10 text-4xl font-poppins text-left">
               {isLoading && "Loading Title..."}

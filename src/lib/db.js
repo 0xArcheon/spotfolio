@@ -5,11 +5,14 @@ export const projects = [
     description:
       "A digital platform for Assam’s ATWSS Scheme to streamline registration and social security services for workers in the unorganized transport sector of Assam State.",
     logo: {
-      url: "",
+      url: "logos/atwsss.png",
       alt: "Project Logo",
     },
     technologies: {
-      language: [{ name: "PHP", icon: "php.svg" }],
+      language: [
+        { name: "PHP", icon: "php.svg" },
+        { name: "Javascript", icon: "js.svg" },
+      ],
       framework: [{ name: "Laravel", icon: "lara.png" }],
       database: [{ name: "PostgreSQL", icon: "pgsql.png" }],
     },
@@ -49,7 +52,7 @@ export const projects = [
     description:
       "A web application for effectively managing contractual employees and ongoing projects under NIC Assam division, improving operational efficiency and streamlining workflows.",
     logo: {
-      url: "",
+      url: "logos/zenmanage.png",
       alt: "Project Logo",
     },
     technologies: {
@@ -87,7 +90,7 @@ export const projects = [
     description:
       "Vyse is a peer-to-peer online marketplace for buying and selling any kind of products or services. Vyse makes it so easy to connect people to buy, sell or exchange used goods and services. It’s completely free to buy or sell products on Vyse without any middleman fees",
     logo: {
-      url: "",
+      url: "logos/vyse.png",
       alt: "Project Logo",
     },
     technologies: {

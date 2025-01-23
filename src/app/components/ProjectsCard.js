@@ -14,7 +14,7 @@ function ProjectsCard({ data, motion }) {
         <div className="relative h-60 w-60">
           <img
             className="rounded-md h-full w-full object-cover"
-            src={data.images[0].url}
+            src={data.logo.url}
             alt=""
           />
           {/* <motion.div
