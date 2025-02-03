@@ -1,9 +1,11 @@
+import { url } from "inspector";
+
 export const projects = [
   {
     projectId: "atwsss",
     name: "ATWSSS",
     description:
-      "A digital platform for Assam’s ATWSS Scheme to streamline registration and social security services for workers in the unorganized transport sector of Assam State.",
+      "A web portal for Assam Goverments initiative 'Assam Transport Workers' Social Security Scheme,2022'. The portal aims to streamline registration and social security services for 250,000 workers in the unorganized transport sector of Assam state.",
     logo: {
       url: "logos/atwsss.png",
       alt: "Project Logo",
@@ -44,7 +46,14 @@ export const projects = [
         alt: "Documents Upload page",
       },
     ],
-    link: "",
+    link: {
+      url: "",
+      text: "Yet to be launched",
+    },
+    startYear: 2024,
+    client: "Labour Welfare Department, Assam",
+    engagement:
+      "I am part of the two person development team at NIC Assam, working on building the web portal for the Assam Transport Workers' Social Security Scheme. My role involves working on both the frontend and backend of the portal, integrating with various APIs and government service integrations.",
   },
   {
     projectId: "zenmanage",
@@ -82,7 +91,14 @@ export const projects = [
         alt: "Employee Registration Form",
       },
     ],
-    link: "",
+    link: {
+      url: "",
+      text: "Demo available soon",
+    },
+    startYear: 2023,
+    client: "National Informatics Centre, Assam State Centre",
+    engagement:
+      "I joined NIC Assam as a Project Trainee in January 2023. During my six month tenure, I was asked to build a web application for managing contractual employees and ongoing projects under NIC Assam division. I was a sole developer on this project and was responsible for the entire development process. This application is still being used as an internal tool by my previous division at NIC, Assam",
   },
   {
     projectId: "vyse",
@@ -116,6 +132,13 @@ export const projects = [
         alt: "Product page",
       },
     ],
-    link: "",
+    link: {
+      url: "",
+      text: "Demo Deployemnt soon",
+    },
+    startYear: 2023,
+    client: "Graded Personal Project",
+    engagement:
+      "Vyse is a personal project I built for my graded semester mini project. The project was built using React JS and Firebase. The project was built in a span of 3 weeks and was graded an A.",
   },
 ];

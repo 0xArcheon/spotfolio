@@ -61,12 +61,12 @@ export default function Page({ params }) {
   }, [projectId]);
 
   return (
-    <div className="flex min-h-screen justify-center max-w-screen-2xl px-20">
+    <div className="flex min-h-screen justify-center px-24 max-w-screen-xl mx-auto">
       <motion.main
         initial={{ opacity: 0, x: -100 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.5, ease: easeOut, delay: 0.2 }}
-        className="maincard flex w-2/3 h-fit mx-28 mr-8 mt-10 rounded-xl flex-col
+        className="maincard flex h-fit mr-8 rounded-xl flex-col
         bg-slate-500 bg-clip-padding backdrop-filter backdrop-blur-3xl bg-opacity-30 relative p-6"
         onMouseMove={handleMouseMove}
         onMouseLeave={handleMouseLeave}
@@ -118,7 +118,7 @@ export default function Page({ params }) {
         </div>
         {project ? <CnGallery images={project.images} /> : ""}
       </motion.main>
-      <div className="right rightcard w-1/3 mr-28 relative">
+      <div className="right rightcard relative">
         {isLoading ? (
           <div></div>
         ) : error ? (

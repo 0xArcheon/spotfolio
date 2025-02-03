@@ -24,9 +24,9 @@ function RightCard() {
   ];
 
   return (
-    <div className="rightcard w-1/3 mt-10 mr-28 relative h-[352px]">
+    <div className="rightcard mt-10">
       <div
-        className="absolute top-0 left-0 w-full h-full bg-green-200 bg-clip-padding
+        className="absolute top-0 left-0 bg-green-200 bg-clip-padding
        backdrop-filter backdrop-blur-3xl bg-opacity-30 rounded-lg z-[-1]"
       ></div>
       <NowPlaying />
