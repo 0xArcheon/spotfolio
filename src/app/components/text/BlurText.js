@@ -14,7 +14,11 @@ const BlurText = ({
   easing = "easeOutCubic",
   onAnimationComplete,
 }) => {
-  const elements = animateBy === "words" ? text.split(" ") : text.split("");
+  const elements = text
+    ? animateBy === "words"
+      ? text.split(" ")
+      : text.split("")
+    : [];
   const [inView, setInView] = useState(false);
   const ref = useRef();
   const animatedCount = useRef(0);

@@ -96,7 +96,7 @@ export const projects = [
       text: "Demo available soon",
     },
     startYear: 2023,
-    client: "National Informatics Centre, Assam State Centre",
+    client: "NIC, Assam State Centre",
     engagement:
       "I joined NIC Assam as a Project Trainee in January 2023. During my six month tenure, I was asked to build a web application for managing contractual employees and ongoing projects under NIC Assam division. I was a sole developer on this project and was responsible for the entire development process. This application is still being used as an internal tool by my previous division at NIC, Assam",
   },

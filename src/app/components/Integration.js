@@ -1,76 +1,36 @@
 "use client";
-import React, { useState } from "react";
-import * as motion from "framer-motion/client";
-import { delay, easeOut } from "framer-motion";
+
+import { useState } from "react";
+import { motion } from "framer-motion";
+import { PlayIcon } from "lucide-react";
 
 function Integration({ data }) {
-  const [dimensions, setDimensions] = useState({ width: 0, height: 0 });
-  const [mousePosition, setMousePosition] = useState({
-    x: dimensions.width,
-    y: 0,
-  });
+  const [hoveredIndex, setHoveredIndex] = useState(null);
 
-  // Track mouse position and card dimensions
-  const handleMouseMove = (e) => {
-    const rect = e.currentTarget.getBoundingClientRect();
-    const mouseX = e.clientX - rect.left;
-    const mouseY = e.clientY - rect.top;
-
-    setMousePosition({ x: mouseX, y: mouseY });
-    setDimensions({ width: rect.width, height: rect.height });
-  };
-
-  const handleMouseLeave = () => {
-    setMousePosition({ x: dimensions.width, y: 0 });
-  };
-  // Animation settings
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.2, // Adds a delay between each child element
+        staggerChildren: 0.1,
       },
     },
   };
 
   const itemVariants = {
-    hidden: { opacity: 0, x: -100 }, // Slide in from the left
+    hidden: { opacity: 0, y: 20 },
     visible: {
       opacity: 1,
-      x: 0,
-      transition: { duration: 0.5, ease: easeOut },
+      y: 0,
+      transition: { duration: 0.3, ease: "easeOut" },
     },
   };
+
   return (
-    <motion.div
-      initial={{ opacity: 0, x: 100 }}
-      animate={{ opacity: 1, x: 0 }}
-      transition={{ duration: 1, ease: easeOut, delay: 0.2 }}
-      onMouseMove={handleMouseMove}
-      onMouseLeave={handleMouseLeave}
-      style={{
-        position: "relative",
-        overflow: "hidden",
-        background: "rgba(255, 255, 255, 0.1)",
-      }}
-      className="techstack flex flex-col mt-10 rounded-xl p-4 gap-2 h-max
-        bg-slate-500 bg-clip-padding backdrop-filter backdrop-blur-3xl bg-opacity-30"
-    >
-      <div
-        className="absolute pointer-events-none"
-        style={{
-          top: 0,
-          left: 0,
-          width: "100%",
-          height: "100%",
-          background: `radial-gradient(circle at ${mousePosition.x}px ${mousePosition.y}px, rgba(98, 208, 137, 0.5), transparent 60%)`,
-          transition: "background 0.5s easeOut",
-        }}
-      ></div>
-      <div className="title text-xl font-medium">Integrations</div>
+    <div className="bg-slate-500 bg-clip-padding backdrop-filter backdrop-blur-3xl bg-opacity-30 p-6 rounded-xl max-w-md mt-8">
+      <h2 className="text-xl font-medium mb-4">Integrations</h2>
       <motion.div
-        className="tech flex flex-col gap-3 py-2"
+        className="grid gap-4"
         initial="hidden"
         animate="visible"
         variants={containerVariants}
@@ -78,20 +38,46 @@ function Integration({ data }) {
         {data.map((item, index) => (
           <motion.div
             key={index}
-            className="item flex gap-2 justify-between px-4"
+            className="bg-slate-700 bg-clip-padding backdrop-filter backdrop-blur-3xl bg-opacity-30 p-4 rounded-md relative overflow-hidden group"
             variants={itemVariants}
+            onMouseEnter={() => setHoveredIndex(index)}
+            onMouseLeave={() => setHoveredIndex(null)}
           >
-            <div className="text-sm">{item.type}</div>
-            <div className="ml-5 text-sm px-2">
-              <a href={item.link} target="_blank" className="">
-                {Array.isArray(item.value) ? item.value.join(", ") : item.value}
-                <span className="ml-2">🌐</span>
-              </a>
+            <div className="flex justify-between items-center">
+              <div>
+                <h3 className="font-normal text-sm">{item.type}</h3>
+                <p className="text-xs text-[#b3b3b3]">
+                  {Array.isArray(item.value)
+                    ? item.value.join(", ")
+                    : item.value}
+                </p>
+              </div>
+              <motion.div
+                className="bg-[#1db954] rounded-full p-3 opacity-0 group-hover:opacity-100 cursor-pointer"
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <PlayIcon size={20} color="black" />
+              </motion.div>
             </div>
+            <motion.div
+              className="absolute inset-0 bg-gradient-to-r from-[#1db954] to-transparent opacity-0 group-hover:opacity-20"
+              initial={false}
+              animate={
+                hoveredIndex === index ? { opacity: 0.2 } : { opacity: 0 }
+              }
+            />
+            <a
+              href={item.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="absolute inset-0"
+              aria-label={`Open ${item.type} integration`}
+            />
           </motion.div>
         ))}
       </motion.div>
-    </motion.div>
+    </div>
   );
 }
 

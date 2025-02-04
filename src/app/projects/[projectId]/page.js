@@ -6,6 +6,7 @@ import { easeOut } from "framer-motion";
 import CnGallery from "@/app/components/gallery/CnGallery";
 import Integration from "@/app/components/Integration";
 import BlurText from "@/app/components/text/BlurText";
+import Metadata from "@/app/components/Metadata";
 
 export default function Page({ params }) {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -61,7 +62,7 @@ export default function Page({ params }) {
   }, [projectId]);
 
   return (
-    <div className="flex min-h-screen justify-center px-24 max-w-screen-xl mx-auto">
+    <div className="flex min-h-screen justify-center px-24">
       <motion.main
         initial={{ opacity: 0, x: -100 }}
         animate={{ opacity: 1, x: 0 }}
@@ -116,6 +117,15 @@ export default function Page({ params }) {
             </div>
           </div>
         </div>
+        {project ? (
+          <Metadata
+            client={project.client}
+            startYear={project.startYear}
+            link={project.link}
+          />
+        ) : (
+          ""
+        )}
         {project ? <CnGallery images={project.images} /> : ""}
       </motion.main>
       <div className="right rightcard relative">
