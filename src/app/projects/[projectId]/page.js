@@ -7,6 +7,7 @@ import CnGallery from "@/app/components/gallery/CnGallery";
 import Integration from "@/app/components/Integration";
 import BlurText from "@/app/components/text/BlurText";
 import Metadata from "@/app/components/Metadata";
+import Engagement from "@/app/components/Engagement";
 
 export default function Page({ params }) {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -62,7 +63,7 @@ export default function Page({ params }) {
   }, [projectId]);
 
   return (
-    <div className="flex min-h-screen justify-center px-24">
+    <div className="flex px-24 max-w-screen-xl mx-auto">
       <motion.main
         initial={{ opacity: 0, x: -100 }}
         animate={{ opacity: 1, x: 0 }}
@@ -118,15 +119,30 @@ export default function Page({ params }) {
           </div>
         </div>
         {project ? (
-          <Metadata
-            client={project.client}
-            startYear={project.startYear}
-            link={project.link}
-          />
+          <div>
+            <Metadata
+              client={project.client}
+              startYear={project.startYear}
+              link={project.link}
+            />
+          </div>
         ) : (
           ""
         )}
         {project ? <CnGallery images={project.images} /> : ""}
+        <div>
+          <div className="title text-xl font-medium w-full">Engagement</div>
+        </div>
+        <div className="introtext rounded-xl text-justify font-normal py-8 px-12">
+          <BlurText
+            text={project && project.engagement}
+            delay={50}
+            animateBy="words"
+            direction="top"
+            onAnimationComplete={handleAnimationComplete}
+            className="text-justify"
+          />
+        </div>
       </motion.main>
       <div className="right rightcard relative">
         {isLoading ? (

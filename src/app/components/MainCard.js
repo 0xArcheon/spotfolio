@@ -32,7 +32,7 @@ function MainCard() {
       initial={{ opacity: 0, x: -100 }}
       animate={{ opacity: 1, x: 0 }}
       transition={{ duration: 0.5, ease: easeOut, delay: 0.2 }}
-      className="maincard flex mt-10 rounded-xl flex-col mr-8
+      className="maincard flex mt-10 rounded-xl flex-col mr-8 max-lg:mr-0
         bg-slate-500 bg-clip-padding backdrop-filter backdrop-blur-3xl bg-opacity-30 relative p-6"
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}

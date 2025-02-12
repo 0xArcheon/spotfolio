@@ -2,7 +2,7 @@ import React from "react";
 
 function ExpCard() {
   return (
-    <div className="flex flex-col w-2/3 mr-5 h-full">
+    <div className="flex flex-col w-2/3 mr-5 h-full max-lg:w-full max-lg:mr-0 max-md:mt-8">
       <div>
         <div className="title text-xl font-medium w-full">Experience</div>
       </div>

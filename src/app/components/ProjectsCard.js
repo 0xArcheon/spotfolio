@@ -6,12 +6,13 @@ function ProjectsCard({ data, motion }) {
   return (
     <motion.div
       variants={{ hidden: { opacity: 0 }, show: { opacity: 1 } }}
-      className="projectscard rounded-md p-6 hover:bg-slate-400 hover:bg-clip-padding hover:backdrop-filter hover:backdrop-blur-3xl hover:bg-opacity-10 aspect-square relative"
+      className="projectscard rounded-md p-6 hover:bg-slate-400 hover:bg-clip-padding 
+      hover:backdrop-filter hover:backdrop-blur-3xl hover:bg-opacity-10 aspect-square relative"
       whileHover="hover"
       onClick={() => setIsExpanded(!isExpanded)}
     >
       <a href={`/projects/${data.projectId}`} className="block relative">
-        <div className="relative h-60 w-60">
+        <div className="relative h-60 w-60 max-md:h-40 max-md:w-40">
           <img
             className="rounded-md h-full w-full object-cover"
             src={data.logo.url}

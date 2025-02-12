@@ -6,7 +6,7 @@ function SocialCard({ name, icon, link }) {
     <motion.a
       href={link}
       target="_blank"
-      className="socialcard text-sm rounded-full h-max w-5/12 aspect-square flex justify-center z-10"
+      className="socialcard text-sm rounded-full h-max w-5/12 aspect-square flex justify-center z-10 max-lg:w-1/5 "
       transition={{
         type: "spring",
         stiffness: 300,
