@@ -63,12 +63,12 @@ export default function Page({ params }) {
   }, [projectId]);
 
   return (
-    <div className="flex px-24 max-w-screen-xl mx-auto">
+    <div className="flex px-24 max-w-screen-xl mx-auto max-lg:flex-col max-md:px-18 max-sm:px-8">
       <motion.main
         initial={{ opacity: 0, x: -100 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.5, ease: easeOut, delay: 0.2 }}
-        className="maincard flex h-fit mr-8 rounded-xl flex-col
+        className="maincard flex mt-10 rounded-xl flex-col mr-8 max-lg:mr-0
         bg-slate-500 bg-clip-padding backdrop-filter backdrop-blur-3xl bg-opacity-30 relative p-6"
         onMouseMove={handleMouseMove}
         onMouseLeave={handleMouseLeave}
@@ -96,12 +96,10 @@ export default function Page({ params }) {
             </a>
           </button>
         </div>
-        <div className="flex p-8 pt-2">
+        <div className="flex p-8 pt-2 max-md:flex-col max-sm:p-4">
           <div className="photo rounded-xl flex justify-center items-center"></div>
-          <div className="introsection flex flex-col gap-4 pl-8 z-10">
-            <div className="name z-10 text-4xl font-poppins text-left">
-              {isLoading && "Loading Title..."}
-              {error && <span className="text-red-500">{error}</span>}
+          <div className="introsection flex flex-col gap-4 pl-8 z-10  max-md:pl-0">
+            <div className="name z-10 text-4xl font-poppins text-left tracking-wider max-md:text-3xl">
               {project && project.name}
             </div>
             <div className="introtext rounded-xl text-justify font-normal">
@@ -113,7 +111,6 @@ export default function Page({ params }) {
                 onAnimationComplete={handleAnimationComplete}
                 className="text-justify"
               />
-              {isLoading && "Loading description..."}
               {error && <span className="text-red-500">{error}</span>}
             </div>
           </div>
@@ -133,18 +130,9 @@ export default function Page({ params }) {
         <div>
           <div className="title text-xl font-medium w-full">Engagement</div>
         </div>
-        <div className="introtext rounded-xl text-justify font-normal py-8 px-12">
-          <BlurText
-            text={project && project.engagement}
-            delay={50}
-            animateBy="words"
-            direction="top"
-            onAnimationComplete={handleAnimationComplete}
-            className="text-justify"
-          />
-        </div>
+        {project ? <Engagement data={project.engagement} /> : ""}
       </motion.main>
-      <div className="right rightcard relative">
+      <div className="rightcard mt-10 flex flex-col">
         {isLoading ? (
           <div></div>
         ) : error ? (

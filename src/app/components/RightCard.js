@@ -5,7 +5,7 @@ function RightCard() {
   const framework = [
     { name: "React", icon: "react.png" },
     { name: "Next.JS", icon: "nextjs.svg" },
-    { name: "Laravel", icon: "lara.png" },
+    { name: "Laravel", icon: "laravel.svg" },
     { name: "Node JS", icon: "developer.png" },
     { name: "Express", icon: "express.svg" },
   ];
@@ -18,7 +18,7 @@ function RightCard() {
   ];
 
   const database = [
-    { name: "MongoDB", icon: "mongo.svg" },
+    { name: "MongoDB", icon: "mongodb.svg" },
     { name: "PostgreSQL", icon: "pgsql.png" },
     { name: "MySQL", icon: "mysql.png" },
   ];

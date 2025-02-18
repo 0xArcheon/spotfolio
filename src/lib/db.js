@@ -12,11 +12,11 @@ export const projects = [
     },
     technologies: {
       language: [
-        { name: "PHP", icon: "php.svg" },
-        { name: "Javascript", icon: "js.svg" },
+        { name: "PHP", icon: "/php.svg" },
+        { name: "Javascript", icon: "/js.svg" },
       ],
-      framework: [{ name: "Laravel", icon: "lara.png" }],
-      database: [{ name: "PostgreSQL", icon: "pgsql.png" }],
+      framework: [{ name: "Laravel", icon: "/laravel.svg" }],
+      database: [{ name: "PostgreSQL", icon: "/pgsql.png" }],
     },
     integrations: [
       {
@@ -53,7 +53,7 @@ export const projects = [
     startYear: 2024,
     client: "Labour Welfare Department, Assam",
     engagement:
-      "I am part of the two person development team at NIC Assam, working on building the web portal for the Assam Transport Workers' Social Security Scheme. My role involves working on both the frontend and backend of the portal, integrating with various APIs and government service integrations.",
+      "I am part of the development team at NIC Assam, working on building the web portal for the Assam Transport Workers' Social Security Scheme. My role involves working on both the frontend and backend of the portal, integrating with various APIs and government services like UIDAI Aadhar, eShram, eGras etc.",
   },
   {
     projectId: "zenmanage",
@@ -67,11 +67,11 @@ export const projects = [
     technologies: {
       language: [{ name: "Javascript", icon: "js.svg" }],
       framework: [
-        { name: "React JS", icon: "js.svg" },
-        { name: "Node JS", icon: "js.svg" },
-        { name: "Express", icon: "js.svg" },
+        { name: "React JS", icon: "/react.png" },
+        { name: "Node JS", icon: "/developer.png" },
+        { name: "Express", icon: "/express.svg" },
       ],
-      database: [{ name: "MongoDB", icon: "js.svg" }],
+      database: [{ name: "MongoDB", icon: "/mongodb.svg" }],
     },
     images: [
       {
@@ -110,9 +110,9 @@ export const projects = [
       alt: "Project Logo",
     },
     technologies: {
-      language: [{ name: "Javascript", icon: "js.svg" }],
-      framework: [{ name: "React JS", icon: "js.svg" }],
-      database: [{ name: "Firebase", icon: "js.svg" }],
+      language: [{ name: "Javascript", icon: "/js.svg" }],
+      framework: [{ name: "React JS", icon: "/react.png" }],
+      database: [{ name: "Firebase", icon: "/firebase.svg" }],
     },
     images: [
       {

@@ -50,7 +50,7 @@ const CnGallery = ({ images }) => {
   };
 
   return (
-    <div className="flex flex-col w-full justify-center ">
+    <div className="flex flex-col w-full justify-center">
       <div>
         <div className="title text-xl font-medium w-full">Screenshots</div>
       </div>
@@ -90,23 +90,23 @@ const CnGallery = ({ images }) => {
             <AnimatePresence mode="popLayout">
               <motion.div
                 key={activeItem.id}
-                className="w-full h-full flex items-center justify-center gap-10 overflow-hidden"
+                className="w-full h-full flex items-center justify-center gap-10 overflow-hidden max-md:flex-col"
                 transition={{ duration: 0.5, ease: "easeInOut" }}
                 layout
               >
                 <motion.div
                   layoutId={`card-${activeItem.id}`}
-                  className="w-[600px] h-[400px] rounded-3xl center font-bold text-5xl cursor-pointer overflow-hidden z-10"
+                  className="w-[600px] h-[400px] rounded-3xl center font-bold text-5xl cursor-pointer overflow-hidden z-10 max-md:w-[400px] max-md:h-[150px] "
                   onClick={() => setActiveItem(null)}
                 >
                   <img
                     src={activeItem.img}
                     alt=""
-                    className="w-full object-cover h-full"
+                    className="w-full object-cover h-full max-md:object-contain"
                   />
                 </motion.div>
                 <motion.div
-                  className="flex flex-col gap-4 justify-center items-center"
+                  className="flex flex-col gap-4 justify-center items-center max-md:flex-row"
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: 0.3 }}
                 >
