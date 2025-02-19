@@ -65,7 +65,7 @@ export const projects = [
       alt: "Project Logo",
     },
     technologies: {
-      language: [{ name: "Javascript", icon: "js.svg" }],
+      language: [{ name: "Javascript", icon: "/js.svg" }],
       framework: [
         { name: "React JS", icon: "/react.png" },
         { name: "Node JS", icon: "/developer.png" },

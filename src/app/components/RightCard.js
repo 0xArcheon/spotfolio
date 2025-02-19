@@ -1,6 +1,8 @@
 import React from "react";
 import NowPlaying from "./NowPlaying";
 import TechStack from "./TechStack";
+import TiltedCard from "./TiltedCard";
+
 function RightCard() {
   const framework = [
     { name: "React", icon: "react.png" },

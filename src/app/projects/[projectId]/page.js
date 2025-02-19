@@ -128,7 +128,9 @@ export default function Page({ params }) {
         )}
         {project ? <CnGallery images={project.images} /> : ""}
         <div>
-          <div className="title text-xl font-medium w-full">Engagement</div>
+          <div className="title text-xl font-medium w-full mb-3">
+            Engagement
+          </div>
         </div>
         {project ? <Engagement data={project.engagement} /> : ""}
       </motion.main>
@@ -147,7 +149,9 @@ export default function Page({ params }) {
             />
           )
         )}
-        {project?.integrations && <Integration data={project.integrations} />}
+        <div className="flex justify-center items-center">
+          {project?.integrations && <Integration data={project.integrations} />}
+        </div>
       </div>
     </div>
   );

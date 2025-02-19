@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { PlayIcon } from "lucide-react";
+import { ExternalLink } from "lucide-react";
 
 function Integration({ data }) {
   const [hoveredIndex, setHoveredIndex] = useState(null);
@@ -27,7 +27,7 @@ function Integration({ data }) {
   };
 
   return (
-    <div className="bg-slate-500 bg-clip-padding backdrop-filter backdrop-blur-3xl bg-opacity-30 p-6 rounded-xl max-w-md mt-8">
+    <div className="w-full bg-slate-500 bg-clip-padding backdrop-filter backdrop-blur-3xl bg-opacity-30 p-6 rounded-xl max-w-md mt-8">
       <h2 className="text-xl font-medium mb-4">Integrations</h2>
       <motion.div
         className="grid gap-4"
@@ -53,11 +53,11 @@ function Integration({ data }) {
                 </p>
               </div>
               <motion.div
-                className="bg-[#1db954] rounded-full p-3 opacity-0 group-hover:opacity-100 cursor-pointer"
+                className="bg-emerald-200 rounded-full p-3 opacity-0 group-hover:opacity-100 cursor-pointer"
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.95 }}
               >
-                <PlayIcon size={20} color="black" />
+                <ExternalLink size={20} color="black" />
               </motion.div>
             </div>
             <motion.div
