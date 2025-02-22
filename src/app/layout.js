@@ -2,6 +2,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "./components/Navbar";
 const inter = Inter({ subsets: ["latin"] });
+import { Analytics } from "@vercel/analytics/react";
 
 export const metadata = {
   title: "Amlan Saikia",
@@ -20,6 +21,7 @@ export default function RootLayout({ children }) {
         >
           <Navbar />
           {children}
+          <Analytics />
         </div>
       </body>
     </html>
