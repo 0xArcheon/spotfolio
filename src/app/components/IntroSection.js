@@ -13,7 +13,7 @@ function IntroSection() {
       <div className="photo rounded-xl flex justify-center items-center">
         {/* <img src="this-is-2.jpg" alt="" className="object-contain rounded-xl" /> */}
         <TiltedCard
-          imageSrc="/this-is-2.jpg"
+          imageSrc="/this-new.JPEG"
           altText="Archeon"
           captionText="Namaste"
           containerHeight="225px"
