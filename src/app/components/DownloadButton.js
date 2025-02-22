@@ -1,110 +1,35 @@
-"use client";
 import React from "react";
-import styled from "styled-components";
 
 const Button = () => {
   return (
-    <StyledWrapper>
-      <button className="learn-more">
-        <span
-          className="circle bg-clip-padding backdrop-filter bg-slate-500
-      backdrop-blur-3xl bg-opacity-30"
-          aria-hidden="true"
-        >
-          <span className="icon arrow" />
+    <button className="relative inline-block cursor-pointer outline-none border-0 align-middle bg-transparent p-0 font-inherit w-48 group overflow-hidden">
+      {/* Gradient backgrounds */}
+      <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-[#48e07d] to-[#63e892] -translate-x-full group-hover:translate-x-0 transition-all duration-700 ease-in-out rounded-3xl" />
+      <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-[#48e07d]/40 to-[#63e892]/40 -translate-x-full group-hover:translate-x-0 transition-all duration-700 ease-in-out delay-100 rounded-3xl" />
+
+      {/* Base button with default expanded state */}
+      <span
+        className="relative block m-0 w-full h-12 rounded-3xl bg-slate-500 bg-opacity-30 backdrop-blur-3xl transition-all duration-700 ease-in-out"
+        aria-hidden="true"
+      />
+
+      {/* Content wrapper to keep text and arrow together */}
+      <span className="absolute inset-0 flex items-center z-30">
+        {/* Arrow icon wrapper */}
+        <span className="absolute left-2.5 translate-x-4 transition-all duration-700 ease-in-out group-hover:translate-x-6">
+          {/* Arrow line */}
+          <span className="block w-4.5 h-0.5 bg-white transition-all duration-700" />
+          {/* Arrow head */}
+          <span className="absolute -top-1 right-0.5 w-2.5 h-2.5 border-t-2 border-r-2 border-white rotate-45 transition-all duration-700" />
         </span>
-        <span className="button-text">Resume</span>
-      </button>
-    </StyledWrapper>
+
+        {/* Button text */}
+        <span className="absolute inset-0 py-3 pl-4 text-white font-normal leading-relaxed text-center">
+          Resume
+        </span>
+      </span>
+    </button>
   );
 };
-
-const StyledWrapper = styled.div`
-  button {
-    position: relative;
-    display: inline-block;
-    cursor: pointer;
-    outline: none;
-    border: 0;
-    vertical-align: middle;
-    text-decoration: none;
-    background: transparent;
-    padding: 0;
-    font-size: inherit;
-    font-family: inherit;
-  }
-
-  button.learn-more {
-    width: 12rem;
-    height: auto;
-  }
-
-  button.learn-more .circle {
-    transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
-    position: relative;
-    display: block;
-    margin: 0;
-    width: 3rem;
-    height: 3rem;
-    border-radius: 1.625rem;
-  }
-
-  button.learn-more .circle .icon {
-    transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    margin: auto;
-    background: #fff;
-  }
-
-  button.learn-more .circle .icon.arrow {
-    transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
-    left: 0.625rem;
-    width: 1.125rem;
-    height: 0.125rem;
-    background: none;
-  }
-
-  button.learn-more .circle .icon.arrow::before {
-    position: absolute;
-    content: "";
-    top: -0.29rem;
-    right: 0.0625rem;
-    width: 0.625rem;
-    height: 0.625rem;
-    border-top: 0.125rem solid #fff;
-    border-right: 0.125rem solid #fff;
-    transform: rotate(45deg);
-  }
-
-  button.learn-more .button-text {
-    transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    padding: 0.75rem 0;
-    margin: 0 0 0 1.85rem;
-    color: #ffffff;
-    font-weight: 700;
-    line-height: 1.6;
-    text-align: center;
-  }
-
-  button:hover .circle {
-    width: 100%;
-  }
-
-  button:hover .circle .icon.arrow {
-    background: #fff;
-    transform: translate(1rem, 0);
-  }
-
-  button:hover .button-text {
-    color: #fff;
-  }
-`;
 
 export default Button;

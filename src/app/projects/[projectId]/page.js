@@ -141,6 +141,7 @@ export default function Page({ params }) {
               client={project.client}
               startYear={project.startYear}
               link={project.link}
+              name={project.name}
             />
           )}
         </div>

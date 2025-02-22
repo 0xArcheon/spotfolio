@@ -5,7 +5,7 @@ export const projects = [
     projectId: "atwsss",
     name: "ATWSSS",
     description:
-      "A web portal for Assam Goverments initiative 'Assam Transport Workers' Social Security Scheme,2022'. The portal aims to streamline registration and social security services for 250,000 workers in the unorganized transport sector of Assam state.",
+      "A platform for Assam Goverment's initiative 'Assam Transport Workers' Social Security Scheme,2022'. The portal aims to streamline registration and social security services for 250,000 workers in the unorganized transport sector of Assam state.",
     logo: {
       url: "logos/atwsss.png",
       alt: "Project Logo",
@@ -47,7 +47,7 @@ export const projects = [
       },
     ],
     link: {
-      url: "",
+      url: "#",
       text: "Yet to be launched",
     },
     startYear: 2024,
@@ -98,7 +98,7 @@ export const projects = [
       },
     ],
     link: {
-      url: "",
+      url: "#",
       text: "Demo available soon",
     },
     startYear: 2023,
@@ -144,7 +144,7 @@ export const projects = [
       },
     ],
     link: {
-      url: "",
+      url: "#",
       text: "Demo Deployemnt soon",
     },
     startYear: 2023,

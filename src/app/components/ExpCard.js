@@ -39,6 +39,12 @@ function ExpCard() {
             <div className="text-xs text-right max-md:text-left">
               Guwahati, Assam
             </div>
+            <div
+              className="mt-1 duration text-xs opacity-60 rounded-2xl border-2 w-fit px-2 bg-slate-100 text-slate-800 hidden
+              max-md:block"
+            >
+              Aug 24- Present
+            </div>
           </div>
         </div>
         <div className="h-0.5 bg-white hidden max-md:block opacity-20"></div>
@@ -67,6 +73,12 @@ function ExpCard() {
             <div className="text-xs text-right max-md:text-left">
               Guwahati, Assam
             </div>
+            <div
+              className="mt-1 duration text-xs opacity-60 rounded-2xl border-2 w-fit px-2 bg-slate-100 text-slate-800 hidden
+              max-md:block"
+            >
+              Dec 23-Jul 24
+            </div>
           </div>
         </div>
         <div className="h-0.5 bg-white hidden max-md:block opacity-20"></div>
@@ -94,6 +106,12 @@ function ExpCard() {
             </div>
             <div className="text-xs text-right max-md:text-left">
               Guwahati, Assam
+            </div>
+            <div
+              className="mt-1 duration text-xs opacity-60 rounded-2xl border-2 w-fit px-2 bg-slate-100 text-slate-800 hidden
+              max-md:block"
+            >
+              Aug 23-Nov 23
             </div>
           </div>
         </div>
