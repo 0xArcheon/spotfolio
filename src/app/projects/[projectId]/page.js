@@ -8,6 +8,7 @@ import Integration from "@/app/components/Integration";
 import BlurText from "@/app/components/text/BlurText";
 import Metadata from "@/app/components/Metadata";
 import Engagement from "@/app/components/Engagement";
+import MetaCard from "@/app/components/MetaCard";
 
 export default function Page({ params }) {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -115,23 +116,8 @@ export default function Page({ params }) {
             </div>
           </div>
         </div>
-        {project ? (
-          <div>
-            <Metadata
-              client={project.client}
-              startYear={project.startYear}
-              link={project.link}
-            />
-          </div>
-        ) : (
-          ""
-        )}
         {project ? <CnGallery images={project.images} /> : ""}
-        <div>
-          <div className="title text-xl font-medium w-full mb-3">
-            Engagement
-          </div>
-        </div>
+
         {project ? <Engagement data={project.engagement} /> : ""}
       </motion.main>
       <div className="rightcard mt-10 flex flex-col">
@@ -149,6 +135,15 @@ export default function Page({ params }) {
             />
           )
         )}
+        <div className="flex justify-center items-center">
+          {project && (
+            <MetaCard
+              client={project.client}
+              startYear={project.startYear}
+              link={project.link}
+            />
+          )}
+        </div>
         <div className="flex justify-center items-center">
           {project?.integrations && <Integration data={project.integrations} />}
         </div>

@@ -16,7 +16,6 @@ function RightCard() {
     { name: "Javascript", icon: "js.svg" },
     { name: "PHP", icon: "php.svg" },
     { name: "Java", icon: "java.svg" },
-    { name: "HTML", icon: "html.png" },
   ];
 
   const database = [
