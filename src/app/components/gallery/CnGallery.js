@@ -52,7 +52,7 @@ const CnGallery = ({ images }) => {
   return (
     <div className="flex flex-col w-full justify-center">
       <div>
-        <div className="title text-xl font-medium w-full">Screenshots</div>
+        <div className="title text-xl font-medium w-full my-4">Screenshots</div>
       </div>
       <div className="h-full center w-full flex flex-col gap-5 relative items-center py-10 my-3">
         <motion.div

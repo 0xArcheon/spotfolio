@@ -3,11 +3,11 @@ import { url } from "inspector";
 export const projects = [
   {
     projectId: "atwsss",
-    name: "ATWSSS",
+    name: "Motor Shramik",
     description:
       "A platform for Assam Goverment's initiative 'Assam Transport Workers' Social Security Scheme,2022'. The portal aims to streamline registration and social security services for 250,000 workers in the unorganized transport sector of Assam state.",
     logo: {
-      url: "logos/atwsss.png",
+      url: "/logos/atwsss.png",
       alt: "Project Logo",
     },
     technologies: {
@@ -20,7 +20,7 @@ export const projects = [
     },
     integrations: [
       {
-        type: "Payment Gateway",
+        type: "Payment",
         value: "eGras",
         link: "https://assamegras.gov.in/",
       },
@@ -53,12 +53,67 @@ export const projects = [
     startYear: 2024,
     client: "Labour Welfare Department, Assam",
     engagement:
-      "I am part of the development team at NIC Assam, working on building the web portal for the Assam Transport Workers' Social Security Scheme. My role involves working on both the frontend and backend of the portal, integrating with various APIs and government services like UIDAI Aadhar, eShram, eGras etc.",
+      "As a Software Developer at NIC Assam, I am actively involved in the end-to-end development of the web portal for the Assam Transport Workers' Social Security Scheme. My responsibilities span both frontend and backend development, with a focus on seamless integration of government services and APIs, including UIDAI Aadhaar, eShram, eGras, and others.",
     responsibilities: [
-      "Collaborated with software consultants from Deloitte in designing a suitable workflow in processing worker applications.",
-      "Transformed design mockups from Figma into laravel blade views using semantic HTML, CSS, and JavaScript.",
-      "Implemented robust REST API controllers to handle complex data processing workflows involved in registration and approval of transport workers",
-      "Implemented compliant integration protocols with multiple government digital platforms, facilitating secure data exchange with Aadhaar identity verification and eShram worker registration systems.",
+      "Collaborated with Deloitte software consultants to design an efficient workflow for processing transport worker applications.",
+      "Converted Figma design mockups into responsive Laravel Blade views using semantic HTML, CSS, and JavaScript.",
+      "Developed robust RESTful API controllers to manage complex data workflows for the registration and approval processes.",
+      "Integrated secure and standards-compliant protocols with multiple government platforms, enabling data exchange with systems such as Aadhaar (UIDAI) and eShram.",
+    ],
+  },
+  {
+    projectId: "perfect",
+    name: "Perfect CMS",
+    description:
+      "A modern, responsive website redesign along with a custom Content Management System (CMS) for Perfect Generator Technologies Pvt. Ltd. The project focused on enhancing user experience, improving content control, and streamlining marketing workflows through third-party integrations like Pabbly.",
+    logo: {
+      url: "/logos/atwsss.png",
+      alt: "Project Logo",
+    },
+    technologies: {
+      language: [{ name: "Javascript", icon: "/js.svg" }],
+      framework: [{ name: "NextJS", icon: "/next.svg" }],
+      database: [{ name: "PostgreSQL", icon: "/pgsql.png" }],
+    },
+    integrations: [
+      {
+        type: "Marketing",
+        value: "Pabbly",
+        link: "https://www.pabbly.com/",
+      },
+    ],
+    images: [
+      {
+        url: "/snaps/ATWSSS/Homepage.png",
+        alt: "Home page",
+      },
+      {
+        url: "/snaps/ATWSSS/Registration.png",
+        alt: "Registration page",
+      },
+      {
+        url: "/snaps/ATWSSS/Basic-details.png",
+        alt: "Worker details",
+      },
+      {
+        url: "/snaps/ATWSSS/Documents.png",
+        alt: "Documents Upload page",
+      },
+    ],
+    link: {
+      url: "https://www.perfectgenerators.org/",
+      text: "Visit",
+    },
+    startYear: 2025,
+    client: "Perfect Generator Technologies Pvt. Ltd.",
+    engagement:
+      "Led the full-stack development effort for the company’s digital revamp initiative. Worked closely with the client to understand business needs, plan technical architecture, and deliver a scalable CMS solution that supports dynamic content updates and marketing automation.",
+    responsibilities: [
+      "Designed and developed a custom CMS using Next.js and PostgreSQL to enable dynamic content management by non-technical staff.",
+      "Built a responsive, SEO-friendly frontend with reusable components, optimizing load performance and accessibility.",
+      "Developed a custom Blog writer to support clients content marketing efforts.",
+      "Worked closely with the client to understand their product offerings and delivered a tailored method of showcasing, adding and updating their products",
+      "Collaborated with the client to refine UI/UX and ensure alignment with brand identity and user goals.",
     ],
   },
   {
@@ -67,7 +122,7 @@ export const projects = [
     description:
       "A web application for effectively managing contractual employees and ongoing projects under NIC Assam division, improving operational efficiency and streamlining workflows.",
     logo: {
-      url: "logos/zenmanage.png",
+      url: "/logos/zenmanage.png",
       alt: "Project Logo",
     },
     technologies: {
@@ -117,7 +172,7 @@ export const projects = [
     description:
       "Vyse is a peer-to-peer online marketplace for buying and selling any kind of products or services. Vyse makes it so easy to connect people to buy, sell or exchange used goods and services.",
     logo: {
-      url: "logos/vyse.png",
+      url: "/logos/vyse.png",
       alt: "Project Logo",
     },
     technologies: {

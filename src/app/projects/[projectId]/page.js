@@ -6,9 +6,9 @@ import { easeOut } from "framer-motion";
 import CnGallery from "@/app/components/gallery/CnGallery";
 import Integration from "@/app/components/Integration";
 import BlurText from "@/app/components/text/BlurText";
-import Metadata from "@/app/components/Metadata";
-import Engagement from "@/app/components/Engagement";
 import MetaCard from "@/app/components/MetaCard";
+import Image from "next/image";
+import { Play, CheckCircle, User, Briefcase } from "lucide-react";
 
 export default function Page({ params }) {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -90,6 +90,8 @@ export default function Page({ params }) {
             transition: "background 8s ease-out",
           }}
         ></div>
+
+        {/* Navigation */}
         <div className="navbuttons flex gap-2 p-2 relative z-10">
           <button className="h-10">
             <a href="/">
@@ -97,13 +99,53 @@ export default function Page({ params }) {
             </a>
           </button>
         </div>
-        <div className="flex p-8 pt-2 max-md:flex-col max-sm:p-4">
-          <div className="photo rounded-xl flex justify-center items-center"></div>
-          <div className="introsection flex flex-col gap-4 pl-8 z-10  max-md:pl-0">
-            <div className="name z-10 text-4xl font-poppins text-left tracking-wider max-md:text-3xl">
+
+        {/* Spotify-inspired Header Section */}
+        <div className="flex p-8 pt-4 max-md:flex-col max-sm:p-4 relative z-10">
+          {/* Album Art Style Container */}
+          <div className="photo w-64 h-64 max-md:w-48 max-md:h-48 max-sm:w-40 max-sm:h-40 rounded-lg flex justify-center items-center shadow-2xl flex-shrink-0 max-md:mx-auto max-md:mb-6">
+            {project ? (
+              <Image
+                src={project.logo.url}
+                alt="Project Logo"
+                width={256}
+                height={256}
+                className="rounded-lg"
+              ></Image>
+            ) : (
+              <></>
+            )}
+          </div>
+
+          {/* Project Info - Spotify Style */}
+          <div className="introsection flex flex-col justify-end pl-8 max-md:pl-0 flex-1">
+            {/* Project Type Label */}
+            <motion.div
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.4, delay: 0.3 }}
+              className="text-sm font-medium text-white/80 mb-2 uppercase tracking-wider"
+            >
+              Project
+            </motion.div>
+
+            {/* Project Title - Large Spotify Style */}
+            <motion.h1
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.4 }}
+              className="text-3xl max-lg:text-3xl max-md:text-3xl max-sm:text-2xl font-black text-white mb-4 leading-tight tracking-tight"
+            >
               {project && project.name}
-            </div>
-            <div className="introtext rounded-xl text-justify font-normal">
+            </motion.h1>
+
+            {/* Project Description with Blur Effect */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.5 }}
+              className="text-white/90 text-base max-w-2xl leading-relaxed"
+            >
               <BlurText
                 text={project && project.description}
                 delay={50}
@@ -113,13 +155,84 @@ export default function Page({ params }) {
                 className="text-justify"
               />
               {error && <span className="text-red-500">{error}</span>}
-            </div>
+            </motion.div>
           </div>
         </div>
+
+        {/* Gallery Section */}
         {project ? <CnGallery images={project.images} /> : ""}
 
-        {project ? <Engagement data={project.engagement} /> : ""}
+        {/* Spotify-style Sections */}
+        <div className="px-8 max-sm:px-4 space-y-8 relative z-10 my-8">
+          {/* About This Project - Engagement */}
+          {project && project.engagement && (
+            <motion.section
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.6 }}
+              className="space-y-4"
+            >
+              <div className="flex items-center gap-3 mb-6">
+                <div>
+                  <div className="title text-xl font-medium w-full">
+                    My Engagement
+                  </div>
+                </div>
+              </div>
+              <div className="bg-white/5 rounded-lg p-6 border border-white/10 hover:bg-white/10 transition-all duration-300">
+                <p className="text-white/90 leading-relaxed text-justify">
+                  {project.engagement}
+                </p>
+              </div>
+            </motion.section>
+          )}
+
+          {/* What I Did - Responsibilities */}
+          {project && project.responsibilities && (
+            <motion.section
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.8 }}
+              className="space-y-4 my-4"
+            >
+              <div className="flex items-center gap-3 mb-6">
+                <div>
+                  <div className="title text-xl font-medium w-full">
+                    What I did
+                  </div>
+                </div>
+              </div>
+              <div className="space-y-3">
+                {project.responsibilities.map((responsibility, index) => (
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.4, delay: 1 + index * 0.1 }}
+                    className="group bg-white/5 rounded-lg p-4 border border-white/10 hover:bg-white/10 hover:border-[#1db954]/30 transition-all duration-300 cursor-default"
+                  >
+                    <div className="flex items-start gap-4">
+                      <div className="flex-shrink-0 mt-1">
+                        <div className="w-5 h-5 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-200">
+                          <CheckCircle className="w-5 h-5 text-white" />
+                        </div>
+                      </div>
+                      <p className="text-white/90 leading-relaxed text-sm flex-1">
+                        {responsibility}
+                      </p>
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
+            </motion.section>
+          )}
+        </div>
+
+        {/* Bottom Spacing */}
+        <div className="h-8"></div>
       </motion.main>
+
+      {/* Right Sidebar */}
       <div className="rightcard mt-10 flex flex-col">
         {isLoading ? (
           <div></div>
