@@ -25,7 +25,7 @@ function RightCard() {
   ];
 
   return (
-    <div className="rightcard mt-10 flex flex-col">
+    <div className="rightcard mt-10 flex flex-col sticky top-10 h-fit">
       <div
         className="absolute top-0 left-0 bg-green-200 bg-clip-padding
        backdrop-filter backdrop-blur-3xl bg-opacity-30 rounded-lg z-[-1]"

@@ -1,6 +1,7 @@
 import * as motion from "framer-motion/client";
 import { easeOut } from "framer-motion";
 import React, { useState } from "react";
+import Link from "next/link";
 import {
   Tooltip,
   TooltipContent,
@@ -74,16 +75,16 @@ export default function MetaCard({ name, client, startYear, link }) {
           ></div>
           <div className="flex justify-between items-center">
             <div className="title text-xl font-medium">{name}</div>
-            <a
-              // href={link.url}
+            <Link
+              href={link.url}
               target="_blank"
               className="px-6 py-2 rounded-full bg-white text-black font-normal text-sm hover:bg-zinc-200 transition-colors"
             >
-              <TooltipTrigger>Visit Demo</TooltipTrigger>
-              <TooltipContent sideOffset={5}>
+              <TooltipTrigger>{link.text}</TooltipTrigger>
+              {/* <TooltipContent sideOffset={3}>
                 <p className="text-xs z-30 mt-5">Launching Soon</p>
-              </TooltipContent>
-            </a>
+              </TooltipContent> */}
+            </Link>
           </div>
           <div className="mt-4 flex flex-col gap-2">
             <div className="flex justify-between items-start">

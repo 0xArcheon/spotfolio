@@ -232,8 +232,7 @@ export default function Page({ params }) {
         <div className="h-8"></div>
       </motion.main>
 
-      {/* Right Sidebar */}
-      <div className="rightcard mt-10 flex flex-col">
+      <div className="rightcard mt-10 flex flex-col sticky top-10 h-fit">
         {isLoading ? (
           <div></div>
         ) : error ? (

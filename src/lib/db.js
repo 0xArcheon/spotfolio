@@ -67,12 +67,12 @@ export const projects = [
     description:
       "A modern, responsive website redesign along with a custom Content Management System (CMS) for Perfect Generator Technologies Pvt. Ltd. The project focused on enhancing user experience, improving content control, and streamlining marketing workflows through third-party integrations like Pabbly.",
     logo: {
-      url: "/logos/atwsss.png",
+      url: "/logos/perfect.png",
       alt: "Project Logo",
     },
     technologies: {
       language: [{ name: "Javascript", icon: "/js.svg" }],
-      framework: [{ name: "NextJS", icon: "/next.svg" }],
+      framework: [{ name: "NextJS", icon: "/nextjs.svg" }],
       database: [{ name: "PostgreSQL", icon: "/pgsql.png" }],
     },
     integrations: [
@@ -84,30 +84,30 @@ export const projects = [
     ],
     images: [
       {
-        url: "/snaps/ATWSSS/Homepage.png",
+        url: "/snaps/Perfect/Hero.png",
         alt: "Home page",
       },
       {
-        url: "/snaps/ATWSSS/Registration.png",
-        alt: "Registration page",
+        url: "/snaps/Perfect/Product.png",
+        alt: "Product Page",
       },
       {
-        url: "/snaps/ATWSSS/Basic-details.png",
-        alt: "Worker details",
+        url: "/snaps/Perfect/Dashboard.png",
+        alt: "Admin Dashboard",
       },
       {
-        url: "/snaps/ATWSSS/Documents.png",
-        alt: "Documents Upload page",
+        url: "/snaps/Perfect/Blog.png",
+        alt: "Blog Writer",
       },
     ],
     link: {
       url: "https://www.perfectgenerators.org/",
-      text: "Visit",
+      text: "Visit Site",
     },
     startYear: 2025,
     client: "Perfect Generator Technologies Pvt. Ltd.",
     engagement:
-      "Led the full-stack development effort for the company’s digital revamp initiative. Worked closely with the client to understand business needs, plan technical architecture, and deliver a scalable CMS solution that supports dynamic content updates and marketing automation.",
+      "Led the full-stack development effort for the client's digital revamp initiative. Worked closely with the client to understand business needs, plan technical architecture, and deliver a scalable CMS solution that supports dynamic content updates and marketing automation.",
     responsibilities: [
       "Designed and developed a custom CMS using Next.js and PostgreSQL to enable dynamic content management by non-technical staff.",
       "Built a responsive, SEO-friendly frontend with reusable components, optimizing load performance and accessibility.",
