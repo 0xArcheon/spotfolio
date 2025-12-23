@@ -6,18 +6,19 @@ function ProjectsCard({ data, motion }) {
   return (
     <motion.div
       variants={{ hidden: { opacity: 0 }, show: { opacity: 1 } }}
-      className="projectscard rounded-md p-6 hover:bg-slate-400 hover:bg-clip-padding hover:backdrop-filter hover:backdrop-blur-3xl hover:bg-opacity-10 aspect-square relative"
+      className="projectscard rounded-md p-6 hover:bg-slate-400 hover:bg-clip-padding 
+      hover:backdrop-filter hover:backdrop-blur-3xl hover:bg-opacity-10 aspect-square relative"
       whileHover="hover"
       onClick={() => setIsExpanded(!isExpanded)}
     >
       <a href={`/projects/${data.projectId}`} className="block relative">
-        <div className="relative h-60 w-60">
+        <div className="relative h-60 w-60 max-md:h-40 max-md:w-40">
           <img
             className="rounded-md h-full w-full object-cover"
-            src={data.images[0].url}
+            src={data.logo.url}
             alt=""
           />
-          <motion.div
+          {/* <motion.div
             className="rounded-full link absolute bottom-4 right-4 flex items-center justify-center p-4 bg-spotify-400 shadow-[0_2.8px_2.2px_rgba(0,_0,_0,_0.034),_0_6.7px_5.3px_rgba(0,_0,_0,_0.048),_0_12.5px_10px_rgba(0,_0,_0,_0.06),_0_22.3px_17.9px_rgba(0,_0,_0,_0.072),_0_41.8px_33.4px_rgba(0,_0,_0,_0.086),_0_100px_80px_rgba(0,_0,_0,_0.12)]"
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 0, scale: 0.8 }}
@@ -40,7 +41,7 @@ function ProjectsCard({ data, motion }) {
                 className="h-7 w-7"
               />
             </button>
-          </motion.div>
+          </motion.div> */}
         </div>
         <div className="name py-2">{data.name}</div>
       </a>

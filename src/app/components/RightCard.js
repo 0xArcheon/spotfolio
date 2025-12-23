@@ -1,11 +1,13 @@
 import React from "react";
 import NowPlaying from "./NowPlaying";
 import TechStack from "./TechStack";
+import TiltedCard from "./TiltedCard";
+
 function RightCard() {
   const framework = [
     { name: "React", icon: "react.png" },
     { name: "Next.JS", icon: "nextjs.svg" },
-    { name: "Laravel", icon: "lara.png" },
+    { name: "Laravel", icon: "laravel.svg" },
     { name: "Node JS", icon: "developer.png" },
     { name: "Express", icon: "express.svg" },
   ];
@@ -14,19 +16,18 @@ function RightCard() {
     { name: "Javascript", icon: "js.svg" },
     { name: "PHP", icon: "php.svg" },
     { name: "Java", icon: "java.svg" },
-    { name: "HTML", icon: "html.png" },
   ];
 
   const database = [
-    { name: "MongoDB", icon: "mongo.svg" },
+    { name: "MongoDB", icon: "mongodb.svg" },
     { name: "PostgreSQL", icon: "pgsql.png" },
     { name: "MySQL", icon: "mysql.png" },
   ];
 
   return (
-    <div className="rightcard w-1/3 mt-10 pr-32 relative h-[352px]">
+    <div className="rightcard mt-10 flex flex-col sticky top-10 h-fit">
       <div
-        className="absolute top-0 left-0 w-full h-full bg-green-200 bg-clip-padding
+        className="absolute top-0 left-0 bg-green-200 bg-clip-padding
        backdrop-filter backdrop-blur-3xl bg-opacity-30 rounded-lg z-[-1]"
       ></div>
       <NowPlaying />

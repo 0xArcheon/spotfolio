@@ -38,7 +38,7 @@ function ProjectSection() {
   }, []);
 
   return (
-    <div className="projectsection p-8 z-10 group relative overflow-hidden">
+    <div className="projectsection py-8 z-10 group relative overflow-hidden max-md:mt-6 max-md:py-0">
       <div className="title text-xl font-medium">Projects</div>
       <motion.div
         ref={ref}
