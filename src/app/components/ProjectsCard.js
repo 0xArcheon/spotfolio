@@ -1,51 +1,76 @@
-import React, { useState } from "react";
+import React from "react";
 import { Tooltip } from "react-tooltip";
+import { Github, ExternalLink } from "lucide-react"; // Assuming you use lucide or similar
 
 function ProjectsCard({ data, motion }) {
-  const [isExpanded, setIsExpanded] = useState(false);
+  // We don't strictly need state for the hover effect if we use CSS/Tailwind groups
+  // but we keep the motion prop for the entrance animation.
+
   return (
     <motion.div
-      variants={{ hidden: { opacity: 0 }, show: { opacity: 1 } }}
-      className="projectscard rounded-md p-6 hover:bg-slate-400 hover:bg-clip-padding 
-      hover:backdrop-filter hover:backdrop-blur-3xl hover:bg-opacity-10 aspect-square relative"
-      whileHover="hover"
-      onClick={() => setIsExpanded(!isExpanded)}
+      variants={{ hidden: { opacity: 0, y: 20 }, show: { opacity: 1, y: 0 } }}
+      className="projectscard group relative rounded-md p-4 transition-all duration-300 ease-in-out
+                 hover:bg-slate-400 hover:bg-clip-padding hover:backdrop-filter hover:backdrop-blur-3xl hover:bg-opacity-10 
+                 bg-transparent w-full max-w-[280px]" // Fixed width helps emulate the column grid style of Spotify
     >
-      <a href={`/projects/${data.projectId}`} className="block relative">
-        <div className="relative h-60 w-60 max-md:h-40 max-md:w-40">
-          <img
-            className="rounded-md h-full w-full object-cover"
-            src={data.logo.url}
-            alt=""
-          />
-          {/* <motion.div
-            className="rounded-full link absolute bottom-4 right-4 flex items-center justify-center p-4 bg-spotify-400 shadow-[0_2.8px_2.2px_rgba(0,_0,_0,_0.034),_0_6.7px_5.3px_rgba(0,_0,_0,_0.048),_0_12.5px_10px_rgba(0,_0,_0,_0.06),_0_22.3px_17.9px_rgba(0,_0,_0,_0.072),_0_41.8px_33.4px_rgba(0,_0,_0,_0.086),_0_100px_80px_rgba(0,_0,_0,_0.12)]"
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 0, scale: 0.8 }}
-            variants={{
-              hover: { opacity: 1, scale: 1 },
-            }}
-            transition={{ duration: 0.3, ease: "easeInOut" }}
+      {/* 1. Image Container */}
+      <div className="relative aspect-square w-full shadow-lg mb-4">
+        <img
+          className="h-full w-full rounded-md object-cover shadow-black/50 drop-shadow-lg"
+          src={data.logo.url}
+          alt={data.name}
+        />
+
+        {/* 2. The "Spotify Style" Floating Action Button */}
+        {/* Appears from bottom-right on hover. Matches your slate theme but with higher opacity for contrast */}
+        <div
+          className="absolute bottom-2 right-2 translate-y-4 opacity-0 transition-all duration-300 ease-out 
+                        group-hover:translate-y-0 group-hover:opacity-100 z-10"
+        >
+          <a
+            href={`/projects/${data.projectId}`}
+            className="flex h-12 w-12 items-center justify-center rounded-full bg-slate-100/75 text-slate-900 shadow-xl hover:scale-105 transition-transform"
+            data-tooltip-id="view-project"
           >
-            <button
-              aria-label="View Source Code"
-              onClick={(e) => {
-                e.stopPropagation();
-                window.open(data.link, "_blank");
-              }}
-              id="github"
-            >
-              <img
-                src="/code-branch.png"
-                alt="View Source Code"
-                className="h-7 w-7"
-              />
-            </button>
-          </motion.div> */}
+            <ExternalLink size={20} fill="currentColor" />
+          </a>
         </div>
-        <div className="name py-2">{data.name}</div>
-      </a>
-      <Tooltip anchorSelect="#github" content="View Source Code" />
+      </div>
+
+      {/* 3. Text Content */}
+      <div className="flex flex-col gap-1">
+        <a href={`/projects/${data.projectId}`} className="block">
+          <h3
+            className="truncate font-bold text-white text-base"
+            title={data.name}
+          >
+            {data.name}
+          </h3>
+        </a>
+
+        {/* Description / Tech Stack mimicking "Artist Name" */}
+        <p className="line-clamp-2 text-sm text-slate-300 hover:text-white font-medium">
+          {data.description || "React • Node.js • Tailwind"}
+        </p>
+      </div>
+
+      {/* 4. Secondary Actions (GitHub) */}
+      {/* Positioned absolutely or integrated into the flow depending on preference. 
+          Here it's subtle at the top right, or can be next to the title. */}
+      {data.githubUrl && (
+        <a
+          href={data.githubUrl}
+          target="_blank"
+          rel="noreferrer"
+          id="github-link"
+          className="absolute top-4 right-4 p-2 rounded-full bg-black/40 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 hover:bg-black/60"
+        >
+          <Github size={18} />
+        </a>
+      )}
+
+      <Tooltip id="view-project" content="View Case Study" />
+      <Tooltip anchorSelect="#github-link" content="View Source Code" />
     </motion.div>
   );
 }
