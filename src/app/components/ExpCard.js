@@ -50,9 +50,9 @@ function ExpCard() {
                     {exp.role}
                   </h3>
 
-                  <div className="flex items-center gap-3 text-white/60 text-sm mt-1">
+                  <div className="flex items-center gap-3 text-white/80 text-sm mt-1">
                     <span>{exp.company}</span>
-                    <span className="h-1 w-1 rounded-full bg-white/30"></span>
+                    <span className="h-1 w-1 rounded-full bg-white/60"></span>
                     <span>{exp.location}</span>
                   </div>
 

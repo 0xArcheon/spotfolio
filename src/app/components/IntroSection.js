@@ -31,7 +31,7 @@ function IntroSection() {
         />
       </div>
       <div className="introsection flex flex-col gap-4 pl-8 z-10 max-md:pt-8 max-md:pl-0">
-        <div className="name z-10 text-4xl font-poppins text-left tracking-wider max-md:text-3xl">
+        <div className="name z-10 text-4xl font-poppins text-left font-semibold max-md:text-3xl">
           Amlan Saikia
         </div>
         <motion.div className="introtext rounded-xl text-justify font-normal">
