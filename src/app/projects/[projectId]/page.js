@@ -8,6 +8,7 @@ import Integration from "@/app/components/Integration";
 import BlurText from "@/app/components/text/BlurText";
 import MetaCard from "@/app/components/MetaCard";
 import Image from "next/image";
+import Link from "next/link";
 import { Play, CheckCircle, User, Briefcase } from "lucide-react";
 
 export default function Page({ params }) {
@@ -94,9 +95,9 @@ export default function Page({ params }) {
         {/* Navigation */}
         <div className="navbuttons flex gap-2 p-2 relative z-10">
           <button className="h-10">
-            <a href="/">
+            <Link href="/">
               <img src="../back.svg" alt="" className="h-full" />
-            </a>
+            </Link>
           </button>
         </div>
 
