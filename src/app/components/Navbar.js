@@ -1,41 +1,77 @@
-import React from "react";
+"use client";
+import React, { useState } from "react";
 import * as motion from "framer-motion/client";
-import { easeOut, transform } from "framer-motion";
+import { useMotionValue, useSpring, useTransform } from "framer-motion";
 import Button from "./DownloadButton";
 
 function Navbar() {
+  const [homeHovered, setHomeHovered] = useState(false);
+
   return (
-    <motion.main className="navbar w-full flex justify-center font-outfit py-5 gap-2 items-center">
+    <motion.nav
+      className="navbar w-full flex justify-center font-outfit py-5 gap-2 items-center"
+      initial="hidden"
+      animate="visible"
+      variants={{
+        hidden: {},
+        visible: { transition: { staggerChildren: 0.08, delayChildren: 0.1 } },
+      }}
+    >
+      {/* ── Home pill ─────────────────────────────────────── */}
       <motion.a
-        initial={{ opacity: 0, x: -250 }}
-        animate={{ opacity: 1, x: 0 }}
-        // 1. Add Hover Physics (Scales up slightly)
-        whileHover={{ scale: 1.1 }}
-        // 2. Add Tap Physics (Shrinks slightly on click)
-        whileTap={{ scale: 0.95 }}
-        transition={{ duration: 0.5, ease: "easeOut", delay: 0.2 }}
         href="/"
-        // 3. Added 'hover:bg-opacity-50' and 'transition-colors' for smooth lighting change
-        className="home h-12 p-3 my-1 bg-clip-padding backdrop-filter bg-slate-500 
-             backdrop-blur-3xl bg-opacity-30 hover:bg-opacity-50 transition-colors duration-300 rounded-full"
+        variants={{
+          hidden: { opacity: 0, y: -20, filter: "blur(6px)" },
+          visible: {
+            opacity: 1,
+            y: 0,
+            filter: "blur(0px)",
+            transition: { duration: 0.5, ease: [0.22, 1, 0.36, 1] },
+          },
+        }}
+        whileHover={{ scale: 1.08 }}
+        whileTap={{ scale: 0.93 }}
+        onHoverStart={() => setHomeHovered(true)}
+        onHoverEnd={() => setHomeHovered(false)}
+        className="relative h-12 p-3 my-1 rounded-full overflow-hidden cursor-pointer
+          bg-slate-500 bg-clip-padding backdrop-filter backdrop-blur-3xl bg-opacity-30
+          flex items-center justify-center"
+        style={{ transition: "background 0.3s ease" }}
       >
-        <img src="/home.png" alt="" className="h-full invert" />
+        {/* Animated green glow on hover */}
+        <motion.span
+          className="absolute inset-0 rounded-full pointer-events-none"
+          animate={{
+            background: homeHovered
+              ? "radial-gradient(circle at 50% 50%, rgba(98,208,137,0.25), transparent 70%)"
+              : "radial-gradient(circle at 50% 50%, rgba(98,208,137,0), transparent 70%)",
+          }}
+          transition={{ duration: 0.35, ease: "easeOut" }}
+        />
+        <img src="/home.png" alt="Home" className="h-full invert relative z-10" />
       </motion.a>
+
+      {/* ── Resume pill ───────────────────────────────────── */}
       <motion.a
-        initial={{ opacity: 0, x: -250 }}
-        animate={{ opacity: 1, x: 0 }}
-        // 1. Add Hover Physics (Scales up slightly)
-        whileHover={{ scale: 1.05 }}
-        // 2. Add Tap Physics (Shrinks slightly on click)
-        whileTap={{ scale: 0.95 }}
-        transition={{ duration: 0.5, ease: "easeOut", delay: 0.2 }}
-        target="_blank"
         href="https://drive.google.com/file/d/1otqm6FerhvUFRQ9OseE1Ez691lm5FiGU/view?usp=sharing"
-        className="home h-12"
+        target="_blank"
+        rel="noopener noreferrer"
+        variants={{
+          hidden: { opacity: 0, y: -20, filter: "blur(6px)" },
+          visible: {
+            opacity: 1,
+            y: 0,
+            filter: "blur(0px)",
+            transition: { duration: 0.5, ease: [0.22, 1, 0.36, 1] },
+          },
+        }}
+        whileHover={{ scale: 1.04 }}
+        whileTap={{ scale: 0.96 }}
+        className="h-12"
       >
         <Button />
       </motion.a>
-    </motion.main>
+    </motion.nav>
   );
 }
 

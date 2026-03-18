@@ -85,7 +85,7 @@ function TechStack({ framework = [], language = [], database = [] }) {
       ></div>
       {/* <div className="title text-xl font-medium">Technology Stack</div> */}
        <div className="flex items-center gap-3 mb-3">
-        <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-white/80">
+        <span className="text-[14px] font-bold uppercase tracking-[0.2em] text-white/80">
           Technology Stack
         </span>
         <div className="flex-1 h-px bg-white/10" />

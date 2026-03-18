@@ -46,7 +46,7 @@ function ExpCard() {
 
       {/* Label + rule — same as LinksSection & page sections */}
       <div className="flex items-center gap-3 mb-3">
-        <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-white/80">
+        <span className="text-[14px] font-bold uppercase tracking-[0.2em] text-white/80">
           Experience
         </span>
         <div className="flex-1 h-px bg-white/10" />
@@ -110,13 +110,13 @@ function ExpCard() {
                   </span>
                 )}
               </div>
-              <span className="text-[12px] text-white/40 group-hover:text-white/60 transition-colors duration-200">
+              <span className="text-[12px] text-white/60 group-hover:text-white/70 transition-colors duration-200">
                 {exp.company}&ensp;·&ensp;{exp.location}
               </span>
             </div>
 
             {/* Right: period */}
-            <span className="text-[11px] text-white/35 group-hover:text-white/55 transition-colors duration-200 tabular-nums shrink-0 mt-[2px]">
+            <span className="text-[11px] text-white/60 group-hover:text-white/80 transition-colors duration-200 tabular-nums shrink-0 mt-[2px]">
               {exp.period}
             </span>
           </motion.div>

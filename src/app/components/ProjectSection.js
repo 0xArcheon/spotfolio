@@ -41,7 +41,7 @@ function ProjectSection() {
     <div className="projectsection py-8 z-10 group relative overflow-hidden max-md:mt-6 max-md:py-0">
       {/* <div className="title text-xl font-medium">Projects</div> */}
        <div className="flex items-center gap-3 mb-3">
-        <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-white/80">
+        <span className="text-[14px] font-bold uppercase tracking-[0.2em] text-white/80">
           Projects
         </span>
         <div className="flex-1 h-px bg-white/10" />
