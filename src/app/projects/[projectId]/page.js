@@ -9,7 +9,7 @@ import BlurText from "@/app/components/text/BlurText";
 import MetaCard from "@/app/components/MetaCard";
 import Image from "next/image";
 import Link from "next/link";
-import { Play, CheckCircle, User, Briefcase } from "lucide-react";
+import { CheckCircle } from "lucide-react";
 
 export default function Page({ params }) {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -19,23 +19,14 @@ export default function Page({ params }) {
   const [isLoading, setIsLoading] = useState(true);
   const { projectId } = React.use(params);
 
-  // Track mouse position and card dimensions
   const handleMouseMove = (e) => {
     const rect = e.currentTarget.getBoundingClientRect();
-    const mouseX = e.clientX - rect.left;
-    const mouseY = e.clientY - rect.top;
-
-    setMousePosition({ x: mouseX, y: mouseY });
+    setMousePosition({ x: e.clientX - rect.left, y: e.clientY - rect.top });
     setDimensions({ width: rect.width, height: rect.height });
   };
 
-  const handleMouseLeave = () => {
-    setMousePosition({ x: 0, y: 0 });
-  };
-
-  const handleAnimationComplete = () => {
-    console.log("Animation completed!");
-  };
+  const handleMouseLeave = () => setMousePosition({ x: 0, y: 0 });
+  const handleAnimationComplete = () => console.log("Animation completed!");
 
   useEffect(() => {
     if (!projectId) {
@@ -43,15 +34,11 @@ export default function Page({ params }) {
       setIsLoading(false);
       return;
     }
-
     const fetchProjectDetails = async () => {
       try {
         setIsLoading(true);
         const response = await fetch(`/api/projects/${projectId}`);
-
-        if (!response.ok) {
-          throw new Error("Failed to fetch project details");
-        }
+        if (!response.ok) throw new Error("Failed to fetch project details");
         const data = await response.json();
         setProjects(data);
         setIsLoading(false);
@@ -60,7 +47,6 @@ export default function Page({ params }) {
         setIsLoading(false);
       }
     };
-
     fetchProjectDetails();
   }, [projectId]);
 
@@ -90,7 +76,7 @@ export default function Page({ params }) {
             background: `radial-gradient(circle at ${mousePosition.x}px ${mousePosition.y}px, rgba(98, 208, 137, 0.6), transparent 40%)`,
             transition: "background 8s ease-out",
           }}
-        ></div>
+        />
 
         {/* Navigation */}
         <div className="navbuttons flex gap-2 p-2 relative z-10">
@@ -101,26 +87,21 @@ export default function Page({ params }) {
           </button>
         </div>
 
-        {/* Spotify-inspired Header Section */}
+        {/* Header */}
         <div className="flex p-8 pt-4 max-md:flex-col max-sm:p-4 relative z-10">
-          {/* Album Art Style Container */}
           <div className="photo w-64 h-64 max-md:w-48 max-md:h-48 max-sm:w-40 max-sm:h-40 rounded-lg flex justify-center items-center shadow-2xl flex-shrink-0 max-md:mx-auto max-md:mb-6">
-            {project ? (
+            {project && (
               <Image
                 src={project.logo.url}
                 alt="Project Logo"
                 width={256}
                 height={256}
                 className="rounded-lg"
-              ></Image>
-            ) : (
-              <></>
+              />
             )}
           </div>
 
-          {/* Project Info - Spotify Style */}
           <div className="introsection flex flex-col justify-end pl-8 max-md:pl-0 flex-1">
-            {/* Project Type Label */}
             <motion.div
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
@@ -130,7 +111,6 @@ export default function Page({ params }) {
               Project
             </motion.div>
 
-            {/* Project Title - Large Spotify Style */}
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -140,7 +120,6 @@ export default function Page({ params }) {
               {project && project.name}
             </motion.h1>
 
-            {/* Project Description with Blur Effect */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -160,87 +139,104 @@ export default function Page({ params }) {
           </div>
         </div>
 
-        {/* Gallery Section */}
+        {/* Gallery */}
         {project ? <CnGallery images={project.images} /> : ""}
 
-        {/* Spotify-style Sections */}
-        <div className="px-8 max-sm:px-4 space-y-8 relative z-10 my-8">
-          {/* About This Project - Engagement */}
-          {project && project.engagement && (
+        {/* ── REDESIGNED SECTIONS ─────────────────────────────────────────── */}
+        <div className="px-8 max-sm:px-4 space-y-10 relative z-10 my-8">
+
+          {/* MY ROLE (was: My Engagement) */}
+          {project?.engagement && (
             <motion.section
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.6 }}
               className="space-y-4"
             >
-              <div className="flex items-center gap-3 mb-6">
-                <div>
-                  <div className="title text-xl font-medium w-full">
-                    My Engagement
-                  </div>
-                </div>
+              {/* Label + rule */}
+              <div className="flex items-center gap-3">
+                <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-white/40">
+                  My Role
+                </span>
+                <div className="flex-1 h-px bg-white/10" />
               </div>
-              <div className="bg-white/5 rounded-lg p-6 border border-white/10 hover:bg-white/10 transition-all duration-300">
-                <p className="text-white/90 leading-relaxed text-justify">
+
+              {/* Quote-style block with green left bar */}
+              <div className="relative pl-5">
+                <div
+                  className="absolute left-0 top-0 bottom-0 w-[2px] rounded-full"
+                  style={{
+                    background:
+                      "linear-gradient(180deg, #62d089 0%, rgba(98,208,137,0.12) 100%)",
+                  }}
+                />
+                <p className="text-white/80 leading-[1.9] text-[15px] text-justify">
                   {project.engagement}
                 </p>
               </div>
             </motion.section>
           )}
 
-          {/* What I Did - Responsibilities */}
-          {project && project.responsibilities && (
+          {/* CONTRIBUTIONS (was: What I Did) */}
+          {project?.responsibilities && project.responsibilities.length > 0 && (
             <motion.section
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.8 }}
-              className="space-y-4 my-4"
+              className="space-y-4"
             >
-              <div className="flex items-center gap-3 mb-6">
-                <div>
-                  <div className="title text-xl font-medium w-full">
-                    What I did
-                  </div>
-                </div>
+              {/* Label + rule */}
+              <div className="flex items-center gap-3">
+                <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-white/40">
+                  Contributions
+                </span>
+                <div className="flex-1 h-px bg-white/10" />
               </div>
-              <div className="space-y-3">
+
+              {/* Numbered editorial list */}
+              <ol className="space-y-0">
                 {project.responsibilities.map((responsibility, index) => (
-                  <motion.div
+                  <motion.li
                     key={index}
-                    initial={{ opacity: 0, x: -20 }}
+                    initial={{ opacity: 0, x: -16 }}
                     animate={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.4, delay: 1 + index * 0.1 }}
-                    className="group bg-white/5 rounded-lg p-4 border border-white/10 hover:bg-white/10 hover:border-[#1db954]/30 transition-all duration-300 cursor-default"
+                    transition={{
+                      duration: 0.4,
+                      delay: 1 + index * 0.08,
+                      ease: easeOut,
+                    }}
+                    className="group flex items-start gap-4 py-4 border-b border-white/[0.06] last:border-0"
                   >
-                    <div className="flex items-start gap-4">
-                      <div className="flex-shrink-0 mt-1">
-                        <div className="w-5 h-5 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-200">
-                          <CheckCircle className="w-5 h-5 text-white" />
-                        </div>
-                      </div>
-                      <p className="text-white/90 leading-relaxed text-sm flex-1">
-                        {responsibility}
-                      </p>
-                    </div>
-                  </motion.div>
+                    {/* Index number */}
+                    <span
+                      className="flex-shrink-0 w-6 text-right text-xs font-semibold tabular-nums mt-[3px]"
+                      style={{ color: "rgba(98,208,137,0.55)" }}
+                    >
+                      {String(index + 1).padStart(2, "0")}
+                    </span>
+
+                    {/* Text */}
+                    <p className="text-white/75 text-[14px] leading-relaxed group-hover:text-white/95 transition-colors duration-200 text-justify flex-1">
+                      {responsibility}
+                    </p>
+                  </motion.li>
                 ))}
-              </div>
+              </ol>
             </motion.section>
           )}
         </div>
+        {/* ── END REDESIGNED SECTIONS ──────────────────────────────────────── */}
 
-        {/* Bottom Spacing */}
-        <div className="h-8"></div>
+        <div className="h-8" />
       </motion.main>
 
       <div className="rightcard mt-10 flex flex-col sticky top-10 h-fit">
         {isLoading ? (
-          <div></div>
+          <div />
         ) : error ? (
           <div className="text-red-500">{error}</div>
         ) : (
-          project &&
-          project.technologies && (
+          project?.technologies && (
             <TechStack
               framework={project.technologies.framework}
               language={project.technologies.language}

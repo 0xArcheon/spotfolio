@@ -165,51 +165,5 @@ export const projects = [
       "Implemented RESTful API architecture using Node.js and Express, including secure JWT authentication and proper error handling for API endpoints",
       "Designed and implemented a microservices architecture pattern, separating concerns into discrete services (user management, project tracking, reporting, and notifications) with independent deployment pipelines and API gateways for enhanced system resilience",
     ],
-  },
-  {
-    projectId: "vyse",
-    name: "Vyse Marketplace",
-    description:
-      "Vyse is a peer-to-peer online marketplace for buying and selling any kind of products or services. Vyse makes it so easy to connect people to buy, sell or exchange used goods and services.",
-    logo: {
-      url: "/logos/vyse.png",
-      alt: "Project Logo",
-    },
-    technologies: {
-      language: [{ name: "Javascript", icon: "/js.svg" }],
-      framework: [{ name: "React JS", icon: "/react.png" }],
-      database: [{ name: "Firebase", icon: "/firebase.svg" }],
-    },
-    images: [
-      {
-        url: "/snaps/Vyse/home.png",
-        alt: "Project Homepage",
-      },
-      {
-        url: "/snaps/Vyse/home-featured.png",
-        alt: "Featured section",
-      },
-      {
-        url: "/snaps/Vyse/Listings.png",
-        alt: "Product Listings",
-      },
-      {
-        url: "/snaps/Vyse/product.png",
-        alt: "Product page",
-      },
-    ],
-    link: {
-      url: "#",
-      text: "Demo Deployemnt soon",
-    },
-    startYear: 2023,
-    client: "Graded Personal Project",
-    engagement:
-      "Vyse is a personal project I built for my graded semester mini project. The project was built using React JS and Firebase. The project was built in a span of 3 weeks and was graded an A.",
-    responsibilities: [
-      "Designed and developed a full-featured online marketplace application using React.js and Firebase, implementing real-time updates for product listings and user interactions",
-      "Implemented Firebase Authentication for secure user management with email verification and role-based access control",
-      "Integrated Firebase Firestore for storing product photos",
-    ],
-  },
+  }
 ];

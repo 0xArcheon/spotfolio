@@ -83,8 +83,14 @@ function TechStack({ framework = [], language = [], database = [] }) {
           transition: "background 0.5s easeOut",
         }}
       ></div>
-      <div className="title text-xl font-medium">Technology Stack</div>
-      <div className="category text-xs flex gap-2 mt-4">
+      {/* <div className="title text-xl font-medium">Technology Stack</div> */}
+       <div className="flex items-center gap-3 mb-3">
+        <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-white/80">
+          Technology Stack
+        </span>
+        <div className="flex-1 h-px bg-white/10" />
+      </div>
+      <div className="category text-xs flex gap-2">
         <button
           className={`rounded-xl p-2 bg-clip-padding backdrop-filter backdrop-blur-3xl bg-opacity-30 ${
             tech === "language" ? "bg-slate-100" : "bg-slate-500"
