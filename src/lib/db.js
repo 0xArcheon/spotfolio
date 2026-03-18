@@ -2,6 +2,58 @@ import { url } from "inspector";
 
 export const projects = [
   {
+  projectId: "pharmacy-billing",
+  name: "HMS3 Pharmacy Module",
+  description:
+    "A full-stack pharmacy billing module within a Hospital Management System for GNRC Hospitals, handling medicine issuance for multiple patient types across 4 hospital units with integrations to doctor prescription and indoor indenting modules.",
+  logo: {
+    url: "/logos/gnrc-hms.png",
+    alt: "Pharmacy Billing Module Logo",
+  },
+  technologies: {
+    language: [{ name: "Javascript", icon: "/js.svg" }, { name: "PHP", icon: "/php.svg" }],
+    framework: [
+      { name: "React JS", icon: "/react.png" },
+      { name: "CodeIgniter 4", icon: "/ci.svg" },
+    ],
+    database: [
+      {name: "Oracle", icon: "/oracle.svg"}
+    ],
+  },
+  images: [
+    {
+      url: "/snaps/PharmacyBilling/dashboard.png",
+      alt: "Pharmacy Billing Dashboard",
+    },
+    {
+      url: "/snaps/PharmacyBilling/op-billing.png",
+      alt: "Outpatient Billing Form",
+    },
+    {
+      url: "/snaps/PharmacyBilling/ip-billing.png",
+      alt: "Inpatient Billing Form",
+    },
+    {
+      url: "/snaps/PharmacyBilling/payment-record.png",
+      alt: "Payment Recording Screen",
+    },
+  ],
+  link: {
+    url: "#",
+    text: "internal",
+  },
+  startYear: 2025,
+  client: "GNRC Hospitals",
+  engagement:
+    "As a Full-Stack Developer, I was responsible for the end-to-end development of the Pharmacy Billing Module — a key component of a large-scale Hospital Management System built for GNRC Hospitals, deployed across 4 hospital units. I designed and developed the React frontend and the CodeIgniter 4 API backend. The module is actively used across GNRC units to manage and record medicine issuance for outpatient, inpatient, external etc patients",
+  responsibilities: [
+    "Built a dynamic React/Next.js frontend that adapts billing flows based on patient type (OP, IP, External, Employee), with real-time auto-population of medicines from integrated prescription and indoor indenting modules",
+    "Developed a RESTful API layer in CodeIgniter 4 that validates frontend requests and orchestrates stored procedure calls to the hospital database, maintaining a clean separation between the API and data layers",
+    "Integrated the module with the Doctor Prescription and Indoor Indenting modules to automatically pre-fill prescribed and indented medicines, reducing manual entry and minimising billing errors",
+    "Implemented multi-payment-type recording within the billing workflow and ensured consistent module behaviour across all 4 GNRC hospital units",
+  ],
+},
+  {
     projectId: "atwsss",
     name: "Motor Shramik",
     description:
@@ -55,7 +107,6 @@ export const projects = [
     engagement:
       "As a Software Developer at NIC Assam, I am actively involved in the end-to-end development of the web portal for the Assam Transport Workers' Social Security Scheme. My responsibilities span both frontend and backend development, with a focus on seamless integration of government services and APIs, including UIDAI Aadhaar, eShram, eGras, and others.",
     responsibilities: [
-      "Collaborated with Deloitte software consultants to design an efficient workflow for processing transport worker applications.",
       "Converted Figma design mockups into responsive Laravel Blade views using semantic HTML, CSS, and JavaScript.",
       "Developed robust RESTful API controllers to manage complex data workflows for the registration and approval processes.",
       "Integrated secure and standards-compliant protocols with multiple government platforms, enabling data exchange with systems such as Aadhaar (UIDAI) and eShram.",
@@ -116,54 +167,4 @@ export const projects = [
       "Collaborated with the client to refine UI/UX and ensure alignment with brand identity and user goals.",
     ],
   },
-  {
-    projectId: "zenmanage",
-    name: "ZenManage",
-    description:
-      "A web application for effectively managing contractual employees and ongoing projects under NIC Assam division, improving operational efficiency and streamlining workflows.",
-    logo: {
-      url: "/logos/zenmanage.png",
-      alt: "Project Logo",
-    },
-    technologies: {
-      language: [{ name: "Javascript", icon: "/js.svg" }],
-      framework: [
-        { name: "React JS", icon: "/react.png" },
-        { name: "Node JS", icon: "/developer.png" },
-        { name: "Express", icon: "/express.svg" },
-      ],
-      database: [{ name: "MongoDB", icon: "/mongodb.svg" }],
-    },
-    images: [
-      {
-        url: "/snaps/Zenmanage/Dash-Man.png",
-        alt: "Main Dashboard",
-      },
-      {
-        url: "/snaps/Zenmanage/Regform.png",
-        alt: "Admin Dashboard Image",
-      },
-      {
-        url: "/snaps/Zenmanage/Profile.png",
-        alt: "Employee Profile Page",
-      },
-      {
-        url: "/snaps/Zenmanage/Regform.png",
-        alt: "Employee Registration Form",
-      },
-    ],
-    link: {
-      url: "#",
-      text: "Demo available soon",
-    },
-    startYear: 2023,
-    client: "NIC, Assam State Centre",
-    engagement:
-      'I joined NIC Assam as a Project Trainee in January 2023. During my six month tenure as an intern, I was assigned the project titled "Management of Outsourced Manpower" to build a web application for managing contractual employees and ongoing projects under NIC Assam division. I was a solo developer working on this project and was responsible for the entire design and development process. This application is still being used as an internal tool by my previous division at NIC, Assam',
-    responsibilities: [
-      "Designed and developed a comprehensive MERN stack application with role-based access control for administrators and project managers / HODs ",
-      "Implemented RESTful API architecture using Node.js and Express, including secure JWT authentication and proper error handling for API endpoints",
-      "Designed and implemented a microservices architecture pattern, separating concerns into discrete services (user management, project tracking, reporting, and notifications) with independent deployment pipelines and API gateways for enhanced system resilience",
-    ],
-  }
 ];

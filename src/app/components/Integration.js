@@ -29,8 +29,11 @@ function Integration({ data }) {
   return (
     <div className="w-full bg-slate-500/30 backdrop-blur-3xl border border-white/10 p-8 rounded-2xl max-w-md mt-8 shadow-xl">
       {/* Header */}
-      <div className="mb-6">
-        <h2 className="text-2xl font-semibold text-white mb-1">Integrations</h2>
+      <div className="flex items-center gap-3 mb-3">
+        <span className="text-[14px] font-bold uppercase tracking-[0.2em] text-white/80">
+          Integrations
+        </span>
+        <div className="flex-1 h-px bg-white/10" />
       </div>
 
       {/* Integration Grid */}

@@ -9,7 +9,6 @@ import BlurText from "@/app/components/text/BlurText";
 import MetaCard from "@/app/components/MetaCard";
 import Image from "next/image";
 import Link from "next/link";
-import { CheckCircle } from "lucide-react";
 
 export default function Page({ params }) {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -79,13 +78,13 @@ export default function Page({ params }) {
         />
 
         {/* Navigation */}
-        <div className="navbuttons flex gap-2 p-2 relative z-10">
+        {/* <div className="navbuttons flex gap-2 p-2 relative z-10">
           <button className="h-10">
             <Link href="/">
               <img src="../back.svg" alt="" className="h-full" />
             </Link>
           </button>
-        </div>
+        </div> */}
 
         {/* Header */}
         <div className="flex p-8 pt-4 max-md:flex-col max-sm:p-4 relative z-10">
@@ -108,7 +107,6 @@ export default function Page({ params }) {
               transition={{ duration: 0.4, delay: 0.3 }}
               className="text-sm font-medium text-white/80 mb-2 uppercase tracking-wider"
             >
-              Project
             </motion.div>
 
             <motion.h1

@@ -1,44 +1,36 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 
-const items = [
-  {
-    id: 1,
-    elements: [
-      {
-        id: 1,
-        width: 250,
-        img: "https://images.pexels.com/photos/29273395/pexels-photo-29273395/free-photo-of-rainy-window-view-in-belfast.jpeg",
-      },
-      {
-        id: 2,
-        width: 100,
-        img: "https://images.pexels.com/photos/27303623/pexels-photo-27303623/free-photo-of-a-kitchen-with-a-window-and-a-table.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load",
-      },
-    ],
-  },
-  {
-    id: 2,
-    elements: [
-      {
-        id: 3,
-        width: 100,
-        img: "https://images.pexels.com/photos/29273395/pexels-photo-29273395/free-photo-of-rainy-window-view-in-belfast.jpeg",
-      },
-      {
-        id: 4,
-        width: 250,
-        img: "https://images.pexels.com/photos/29273395/pexels-photo-29273395/free-photo-of-rainy-window-view-in-belfast.jpeg",
-      },
-    ],
-  },
-];
+const defaultWidths = [250, 100];
 
-const CnGallery = () => {
-  const [activeItem, setActiveItem] = useState(items[0].elements[0]);
+const CnGallery = ({ images = [] }) => {
+  // Convert the images array into the expected gallery layout structure.
+  const items = React.useMemo(() => {
+    const elements = (images || []).map((image, index) => ({
+      id: index + 1,
+      width: defaultWidths[index % defaultWidths.length],
+      img: image.url,
+      alt: image.alt || "",
+    }));
+
+    const mid = Math.ceil(elements.length / 2);
+    return [
+      { id: 1, elements: elements.slice(0, mid) },
+      { id: 2, elements: elements.slice(mid) },
+    ];
+  }, [images]);
+
+  const [activeItem, setActiveItem] = useState(items[0]?.elements[0] ?? null);
+
+  // Set the default active item when the image list changes (e.g., different project).
+  useEffect(() => {
+    if (items[0]?.elements[0]) {
+      setActiveItem(items[0].elements[0]);
+    }
+  }, [items]);
 
   const allElements = items.flatMap((column) => column.elements);
 
@@ -48,8 +40,11 @@ const CnGallery = () => {
 
   return (
     <div className="flex flex-col mr-5 w-full">
-      <div>
-        <div className="title text-xl font-medium w-full">Screenshots</div>
+      <div className="flex items-center gap-3 mb-3">
+        <span className="text-[14px] font-bold uppercase tracking-[0.2em] text-white/80">
+          Screenshots
+        </span>
+        <div className="flex-1 h-px bg-white/10" />
       </div>
       <div className="h-full center w-full flex flex-col gap-5 relative items-center py-10 my-10">
         <motion.div
@@ -98,7 +93,7 @@ const CnGallery = () => {
                 >
                   <img
                     src={activeItem.img}
-                    alt=""
+                    alt={activeItem.alt || "Gallery image"}
                     className="w-full object-cover h-full"
                   />
                 </motion.div>
@@ -136,14 +131,14 @@ const Gallery = (props) => {
         height: isSmall ? 80 : 150,
       }}
       className={cn(
-        "rounded-2xl cursor-pointer text-3xl center overflow-hidden relative"
+        "rounded-2xl cursor-pointer text-3xl center overflow-hidden relative",
       )}
       layoutId={`card-${item.id}`}
       onClick={onClick}
     >
       <motion.img
         src={item.img}
-        alt=""
+        alt={item.alt || "Gallery thumbnail"}
         className="w-full object-cover h-full"
         whileHover={{ scale: 1.05 }}
         transition={{
