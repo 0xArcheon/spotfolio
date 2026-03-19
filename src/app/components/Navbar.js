@@ -48,12 +48,16 @@ function Navbar() {
           }}
           transition={{ duration: 0.35, ease: "easeOut" }}
         />
-        <img src="/home.png" alt="Home" className="h-full invert relative z-10" />
+        <img
+          src="/home.png"
+          alt="Home"
+          className="h-full invert relative z-10"
+        />
       </motion.a>
 
       {/* ── Resume pill ───────────────────────────────────── */}
       <motion.a
-        href="https://drive.google.com/file/d/1otqm6FerhvUFRQ9OseE1Ez691lm5FiGU/view?usp=sharing"
+        href="https://drive.google.com/file/d/12m95GrVJA50KAvqwDIBf3nScnR249svv/view?usp=sharing"
         target="_blank"
         rel="noopener noreferrer"
         variants={{

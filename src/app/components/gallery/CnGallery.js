@@ -39,7 +39,7 @@ const CnGallery = ({ images = [] }) => {
   };
 
   return (
-    <div className="flex flex-col mr-5 w-full">
+    <div className="flex flex-col mr-5 w-full px-8">
       <div className="flex items-center gap-3 mb-3">
         <span className="text-[14px] font-bold uppercase tracking-[0.2em] text-white/80">
           Screenshots

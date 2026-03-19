@@ -74,7 +74,7 @@ export default function MetaCard({ name, client, startYear, link }) {
             }}
           ></div>
           <div className="flex justify-between items-center">
-            <div className="title text-xl font-medium">{name}</div>
+            <div className="title text-base font-medium">{name}</div>
             <Link
               href={link.url}
               target="_blank"
@@ -90,13 +90,13 @@ export default function MetaCard({ name, client, startYear, link }) {
             <div className="flex justify-between items-start">
               <div>
                 <p className="text-zinc-400 text-sm">Client</p>
-                <h3 className="text-md font-medium">{client}</h3>
+                <h3 className="text-base font-medium">{client}</h3>
               </div>
             </div>
 
             <div>
               <p className="text-zinc-400 text-sm">Start Date</p>
-              <h3 className="text-md font-medium">{startYear}</h3>
+              <h3 className="text-base font-medium">{startYear}</h3>
             </div>
           </div>
         </motion.div>

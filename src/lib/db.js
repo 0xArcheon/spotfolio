@@ -2,57 +2,46 @@ import { url } from "inspector";
 
 export const projects = [
   {
-  projectId: "pharmacy-billing",
-  name: "HMS3 Pharmacy Module",
-  description:
-    "A full-stack pharmacy billing module within a Hospital Management System for GNRC Hospitals, handling medicine issuance for multiple patient types across 4 hospital units with integrations to doctor prescription and indoor indenting modules.",
-  logo: {
-    url: "/logos/gnrc-hms.png",
-    alt: "Pharmacy Billing Module Logo",
-  },
-  technologies: {
-    language: [{ name: "Javascript", icon: "/js.svg" }, { name: "PHP", icon: "/php.svg" }],
-    framework: [
-      { name: "React JS", icon: "/react.png" },
-      { name: "CodeIgniter 4", icon: "/ci.svg" },
+    projectId: "pharmacy-billing",
+    name: "HMS3 Pharmacy Module",
+    description:
+      "A full-stack pharmacy billing module within a Hospital Management System for GNRC Hospitals, handling medicine issuance for multiple patient types across 4 hospital units with integrations to doctor prescription and indoor indenting modules.",
+    logo: {
+      url: "/logos/gnrc-hms.png",
+      alt: "Pharmacy Billing Module Logo",
+    },
+    technologies: {
+      language: [
+        { name: "Javascript", icon: "/js.svg" },
+        { name: "PHP", icon: "/php.svg" },
+      ],
+      framework: [
+        { name: "React JS", icon: "/react.png" },
+        { name: "CodeIgniter 4", icon: "/ci.svg" },
+      ],
+      database: [{ name: "Oracle PL/SQL", icon: "/oracle.svg" }],
+    },
+    images: [
+      {
+        url: "/snaps/Pharmacy/hm3-pharmacy.png",
+        alt: "Pharmacy Billing UI",
+      },
     ],
-    database: [
-      {name: "Oracle", icon: "/oracle.svg"}
+    link: {
+      url: "#",
+      text: "internal",
+    },
+    startYear: 2025,
+    client: "GNRC Hospitals",
+    engagement:
+      "As a Full-Stack Developer, I was responsible for the end-to-end development of the Pharmacy Billing Module — a key component of a large-scale Hospital Management System built for GNRC Hospitals, deployed across 4 hospital units. I designed and developed the React frontend and the CodeIgniter 4 API backend. The module is actively used across GNRC units to manage and record medicine issuance for outpatient, inpatient, external etc patients",
+    responsibilities: [
+      "Built a dynamic React/Next.js frontend that adapts billing flows based on patient type (OP, IP, External, Employee), with real-time auto-population of medicines from integrated prescription and indoor indenting modules",
+      "Developed a RESTful API layer in CodeIgniter 4 that validates frontend requests and orchestrates stored procedure calls to the hospital database, maintaining a clean separation between the API and data layers",
+      "Integrated the module with the Doctor Prescription and Indoor Indenting modules to automatically pre-fill prescribed and indented medicines, reducing manual entry and minimising billing errors",
+      "Implemented multi-payment-type recording within the billing workflow and ensured consistent module behaviour across all 4 GNRC hospital units",
     ],
   },
-  images: [
-    {
-      url: "/snaps/PharmacyBilling/dashboard.png",
-      alt: "Pharmacy Billing Dashboard",
-    },
-    {
-      url: "/snaps/PharmacyBilling/op-billing.png",
-      alt: "Outpatient Billing Form",
-    },
-    {
-      url: "/snaps/PharmacyBilling/ip-billing.png",
-      alt: "Inpatient Billing Form",
-    },
-    {
-      url: "/snaps/PharmacyBilling/payment-record.png",
-      alt: "Payment Recording Screen",
-    },
-  ],
-  link: {
-    url: "#",
-    text: "internal",
-  },
-  startYear: 2025,
-  client: "GNRC Hospitals",
-  engagement:
-    "As a Full-Stack Developer, I was responsible for the end-to-end development of the Pharmacy Billing Module — a key component of a large-scale Hospital Management System built for GNRC Hospitals, deployed across 4 hospital units. I designed and developed the React frontend and the CodeIgniter 4 API backend. The module is actively used across GNRC units to manage and record medicine issuance for outpatient, inpatient, external etc patients",
-  responsibilities: [
-    "Built a dynamic React/Next.js frontend that adapts billing flows based on patient type (OP, IP, External, Employee), with real-time auto-population of medicines from integrated prescription and indoor indenting modules",
-    "Developed a RESTful API layer in CodeIgniter 4 that validates frontend requests and orchestrates stored procedure calls to the hospital database, maintaining a clean separation between the API and data layers",
-    "Integrated the module with the Doctor Prescription and Indoor Indenting modules to automatically pre-fill prescribed and indented medicines, reducing manual entry and minimising billing errors",
-    "Implemented multi-payment-type recording within the billing workflow and ensured consistent module behaviour across all 4 GNRC hospital units",
-  ],
-},
   {
     projectId: "atwsss",
     name: "Motor Shramik",

@@ -88,7 +88,7 @@ export default function Page({ params }) {
 
         {/* Header */}
         <div className="flex p-8 pt-4 max-md:flex-col max-sm:p-4 relative z-10">
-          <div className="photo w-64 h-64 max-md:w-48 max-md:h-48 max-sm:w-40 max-sm:h-40 rounded-lg flex justify-center items-center shadow-2xl flex-shrink-0 max-md:mx-auto max-md:mb-6">
+          <div className="photo w-64 h-54 max-md:w-48 max-md:h-48 max-sm:w-40 max-sm:h-40 rounded-lg flex justify-center items-center shadow-2xl flex-shrink-0 max-md:mx-auto max-md:mb-6">
             {project && (
               <Image
                 src={project.logo.url}
@@ -106,8 +106,7 @@ export default function Page({ params }) {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4, delay: 0.3 }}
               className="text-sm font-medium text-white/80 mb-2 uppercase tracking-wider"
-            >
-            </motion.div>
+            ></motion.div>
 
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
@@ -142,7 +141,6 @@ export default function Page({ params }) {
 
         {/* ── REDESIGNED SECTIONS ─────────────────────────────────────────── */}
         <div className="px-8 max-sm:px-4 space-y-10 relative z-10 my-8">
-
           {/* MY ROLE (was: My Engagement) */}
           {project?.engagement && (
             <motion.section
