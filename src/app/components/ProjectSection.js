@@ -1,72 +1,23 @@
 import React from "react";
 import ProjectsCard from "./ProjectsCard";
-import { motion, useInView } from "framer-motion";
-import { useRef, useState, useEffect } from "react";
+import * as motion from "framer-motion/client";
+import { projects } from "@/lib/db";
 
 function ProjectSection() {
-  const ref = useRef(null);
-  const [projects, setProjects] = useState([]);
-  const [error, setError] = useState(null);
-
-  useEffect(() => {
-    const fetchProjects = async () => {
-      try {
-        const response = await fetch("/api/projects", {
-          method: "GET",
-          headers: {
-            "Content-Type": "application/json",
-          },
-        });
-
-        if (!response.ok) {
-          const errorData = await response.text();
-          throw new Error(
-            `HTTP error! status: ${response.status}, message: ${errorData}`
-          );
-        }
-
-        const data = await response.json();
-        setProjects(data);
-        console.log("Fetched projects:", data);
-      } catch (err) {
-        console.error("Fetch error:", err);
-        setError(err.message);
-      }
-    };
-
-    fetchProjects();
-  }, []);
-
   return (
-    <div className="projectsection py-8 z-10 group relative overflow-hidden max-md:mt-6 max-md:py-0">
-      {/* <div className="title text-xl font-medium">Projects</div> */}
-       <div className="flex items-center gap-3 mb-3">
-        <span className="text-[14px] font-bold uppercase tracking-[0.2em] text-white/80">
-          Projects
-        </span>
-        <div className="flex-1 h-px bg-white/10" />
-      </div>
+    <section>
+      <h2 className="section-title mb-2">Projects</h2>
       <motion.div
-        ref={ref}
-        variants={{
-          hidden: { opacity: 0, y: 50 },
-          show: {
-            opacity: 1,
-            y: 0,
-            transition: {
-              staggerChildren: 0.25,
-              duration: 0.5,
-            },
-          },
-        }}
-        className="container flex overflow-x-hidden group-hover:overflow-x-auto scrollbar-thumb-rounded-xl scrollbar-corner-rounded-xl  
-        scrollbar-track-rounded-xl scrollbar-thin scrollbar-track-slate-900 scrollbar-thumb-fern-200"
+        className="-mx-3 grid grid-cols-2 sm:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5"
+        initial="hidden"
+        animate="show"
+        variants={{ show: { transition: { staggerChildren: 0.08 } } }}
       >
-        {projects.map((item, index) => (
-          <ProjectsCard data={item} key={index} motion={motion} />
+        {projects.map((item) => (
+          <ProjectsCard data={item} key={item.projectId} />
         ))}
       </motion.div>
-    </div>
+    </section>
   );
 }
 

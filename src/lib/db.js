@@ -1,5 +1,3 @@
-import { url } from "inspector";
-
 export const projects = [
   {
     projectId: "pharmacy-billing",

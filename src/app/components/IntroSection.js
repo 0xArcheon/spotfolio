@@ -1,51 +1,29 @@
 import React from "react";
-import { motion } from "framer-motion";
 import BlurText from "./text/BlurText";
-import TiltedCard from "./TiltedCard";
 
+// Spotify's artist "About" card
 function IntroSection() {
-  const handleAnimationComplete = () => {
-    console.log("Animation completed!");
-  };
-
   return (
-    <main className="flex p-8 pt-2 max-md:flex-col max-sm:p-4">
-      <div className="photo rounded-xl flex justify-center items-center">
-        {/* <img src="this-is-2.jpg" alt="" className="object-contain rounded-xl" /> */}
-        <TiltedCard
-          imageSrc="/this-new.JPEG"
-          altText="Archeon"
-          captionText="Namaste"
-          containerHeight="225px"
-          containerWidth="225px"
-          imageHeight="225px"
-          imageWidth="225px"
-          rotateAmplitude={12}
-          scaleOnHover={1.1}
-          showMobileWarning={false}
-          showTooltip={true}
-          displayOverlayContent={true}
-          overlayContent={
-            <p className="tilted-card-demo-text text-emerald-500 font-bold"></p>
-          }
+    <section>
+      <h2 className="section-title mb-4">About</h2>
+      <div className="grid overflow-hidden rounded-lg bg-spotify-surface transition-colors hover:bg-spotify-elevated md:grid-cols-[minmax(0,2fr)_minmax(0,3fr)]">
+        <img
+          src="/this-is-2.jpg"
+          alt="This Is Amlan"
+          className="aspect-square w-full object-cover"
         />
-      </div>
-      <div className="introsection flex flex-col gap-4 pl-8 z-10 max-md:pt-8 max-md:pl-0">
-        <div className="name z-10 text-4xl font-poppins text-left font-semibold max-md:text-2xl tracking-wider">
-          Amlan Saikia
-        </div>
-        <motion.div className="introtext rounded-xl text-justify font-normal">
+        <div className="flex flex-col justify-end gap-4 p-6">
+          <p className="text-base font-bold">From Guwahati, India</p>
           <BlurText
             text="I am a passionate software developer from Guwahati, India. When I'm not coding, you'll find me immersed in indie rock music or watching films. I find peace and inspiration in the mountains, they're my ultimate therapist."
-            delay={50}
+            delay={40}
             animateBy="words"
             direction="top"
-            onAnimationComplete={handleAnimationComplete}
-            className="text-justify"
+            className="text-base text-spotify-near-white"
           />
-        </motion.div>
+        </div>
       </div>
-    </main>
+    </section>
   );
 }
 

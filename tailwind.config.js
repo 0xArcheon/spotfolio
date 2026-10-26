@@ -1,5 +1,3 @@
-const { Outfit } = require("next/font/google");
-
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   darkMode: ["class"],
@@ -10,74 +8,70 @@ module.exports = {
   ],
   theme: {
     extend: {
+      // Tokens from DESIGN.md
       colors: {
-        fern: {
-          50: "#f0fdf4",
-          100: "#dbfde6",
-          200: "#baf8cf",
-          300: "#84f1aa",
-          400: "#48e07d",
-          500: "#1db954",
-          600: "#14a547",
-          700: "#13823b",
-          800: "#156633",
-          900: "#13542c",
-          950: "#042f15",
-        },
         spotify: {
-          400: "#56EA64",
+          green: "#1ed760",
+          "green-border": "#1db954",
+          black: "#121212",
+          surface: "#181818",
+          elevated: "#1f1f1f",
+          card: "#252525",
+          "card-alt": "#272727",
+          silver: "#b3b3b3",
+          "near-white": "#cbcbcb",
+          border: "#4d4d4d",
+          "border-light": "#7c7c7c",
+          negative: "#f3727f",
+          warning: "#ffa42b",
+          announcement: "#539df5",
         },
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
-        card: {
-          DEFAULT: "hsl(var(--card))",
-          foreground: "hsl(var(--card-foreground))",
-        },
         popover: {
           DEFAULT: "hsl(var(--popover))",
           foreground: "hsl(var(--popover-foreground))",
         },
-        primary: {
-          DEFAULT: "hsl(var(--primary))",
-          foreground: "hsl(var(--primary-foreground))",
-        },
-        secondary: {
-          DEFAULT: "hsl(var(--secondary))",
-          foreground: "hsl(var(--secondary-foreground))",
-        },
-        muted: {
-          DEFAULT: "hsl(var(--muted))",
-          foreground: "hsl(var(--muted-foreground))",
-        },
-        accent: {
-          DEFAULT: "hsl(var(--accent))",
-          foreground: "hsl(var(--accent-foreground))",
-        },
-        destructive: {
-          DEFAULT: "hsl(var(--destructive))",
-          foreground: "hsl(var(--destructive-foreground))",
-        },
         border: "hsl(var(--border))",
-        input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
-        chart: {
-          1: "hsl(var(--chart-1))",
-          2: "hsl(var(--chart-2))",
-          3: "hsl(var(--chart-3))",
-          4: "hsl(var(--chart-4))",
-          5: "hsl(var(--chart-5))",
-        },
       },
       fontFamily: {
-        outfit: ["outfit", "sans-serif"],
-        switzer: ["switzer", "sans"],
-        chillax: ["Chillax", "sans"],
-        poppins: ["Poppins", "sans"],
+        sans: [
+          "SpotifyMixUI",
+          "var(--font-mix)",
+          "CircularSp-Arab",
+          "CircularSp-Hebr",
+          "CircularSp-Cyrl",
+          "CircularSp-Grek",
+          "CircularSp-Deva",
+          "Helvetica Neue",
+          "helvetica",
+          "arial",
+          "Hiragino Sans",
+          "Hiragino Kaku Gothic ProN",
+          "Meiryo",
+          "MS Gothic",
+          "sans-serif",
+        ],
       },
-      borderRadius: {
-        lg: "var(--radius)",
-        md: "calc(var(--radius) - 2px)",
-        sm: "calc(var(--radius) - 4px)",
+      boxShadow: {
+        heavy: "rgba(0,0,0,0.5) 0px 8px 24px",
+        card: "rgba(0,0,0,0.3) 0px 8px 8px",
+        inset:
+          "rgb(18,18,18) 0px 1px 0px, rgb(124,124,124) 0px 0px 0px 1px inset",
+      },
+      letterSpacing: {
+        button: "1.4px",
+        label: "2px",
+      },
+      keyframes: {
+        eq: {
+          "0%, 100%": { transform: "scaleY(0.3)" },
+          "50%": { transform: "scaleY(1)" },
+        },
+      },
+      animation: {
+        eq: "eq 0.9s ease-in-out infinite",
       },
     },
   },
