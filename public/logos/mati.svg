@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <!-- Placeholder artwork until the real MATi logo is added -->
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#1e3a8a"/>
+      <stop offset="1" stop-color="#0f766e"/>
+    </linearGradient>
+  </defs>
+  <rect width="512" height="512" fill="url(#g)"/>
+  <text x="256" y="290" text-anchor="middle" font-family="Helvetica Neue, Arial, sans-serif" font-size="128" font-weight="800" fill="#fff" letter-spacing="-4">MATi</text>
+  <text x="256" y="350" text-anchor="middle" font-family="Helvetica Neue, Arial, sans-serif" font-size="26" font-weight="600" fill="#ffffff" fill-opacity="0.75" letter-spacing="2">ASSETS &amp; TITLES</text>
+</svg>

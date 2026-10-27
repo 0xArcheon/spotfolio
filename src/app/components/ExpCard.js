@@ -32,97 +32,83 @@ const experiences = [
 
 const containerVariants = {
   hidden: { opacity: 0 },
-  visible: { opacity: 1, transition: { staggerChildren: 0.1 } },
+  visible: { opacity: 1, transition: { staggerChildren: 0.06 } },
 };
 
 const rowVariants = {
-  hidden: { opacity: 0, x: -12 },
-  visible: { opacity: 1, x: 0, transition: { duration: 0.35, ease: easeOut } },
+  hidden: { opacity: 0, y: 6 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.3, ease: easeOut } },
 };
+
+// Green "now playing" bars marking the current role
+export function Equalizer() {
+  return (
+    <span className="flex h-3.5 items-end gap-[2px]" aria-label="Current">
+      {[0, 0.3, 0.15].map((delay) => (
+        <span
+          key={delay}
+          className="h-full w-[3px] origin-bottom scale-y-50 rounded-sm bg-spotify-green motion-safe:animate-eq"
+          style={{ animationDelay: `${delay}s` }}
+        />
+      ))}
+    </span>
+  );
+}
+
+const rowGrid =
+  "grid grid-cols-[16px_minmax(0,1fr)_auto] items-center gap-4 px-4 md:grid-cols-[16px_minmax(0,4fr)_minmax(0,2fr)_auto]";
 
 function ExpCard() {
   return (
-    <div className="flex flex-col w-2/3 h-full max-lg:w-full max-lg:mr-0 max-md:mt-8 text-white">
+    <section>
+      <h2 className="section-title mb-4">Experience</h2>
 
-      {/* Label + rule — same as LinksSection & page sections */}
-      <div className="flex items-center gap-3 mb-3">
-        <span className="text-[14px] font-bold uppercase tracking-[0.2em] text-white/80">
-          Experience
-        </span>
-        <div className="flex-1 h-px bg-white/10" />
+      <div
+        className={`${rowGrid} h-9 border-b border-white/10 text-sm text-spotify-silver`}
+      >
+        <span className="text-right">#</span>
+        <span>Role</span>
+        <span className="max-md:hidden">Location</span>
+        <span>Period</span>
       </div>
 
-      {/* Card container — matches LinksSection backdrop */}
-      <motion.div
-        className="flex-grow rounded-xl p-5 flex flex-col justify-center
-          bg-slate-400 bg-clip-padding backdrop-filter backdrop-blur-3xl bg-opacity-10"
+      <motion.ol
+        className="mt-2"
         initial="hidden"
         animate="visible"
         variants={containerVariants}
       >
         {experiences.map((exp, index) => (
-          <motion.div
+          <motion.li
             key={exp.id}
             variants={rowVariants}
-            className="group relative flex items-start gap-4 px-4 py-3
-              rounded-lg border border-transparent
-              hover:border-white/10 hover:bg-white/5
-              transition-all duration-200 cursor-default"
+            className={`${rowGrid} h-14 rounded-md transition-colors hover:bg-white/10`}
           >
-            {/* Green left pip — always visible for current, hover-only for past */}
-            <span
-              className="absolute left-0 top-1/2 -translate-y-1/2 w-[2px] rounded-full transition-all duration-200"
-              style={{
-                height: "1.25rem",
-                background: exp.current
-                  ? "linear-gradient(180deg,#62d089,rgba(98,208,137,0.2))"
-                  : undefined,
-              }}
-            >
-              {/* Past entries: pip fades in on group-hover via inline style trick */}
-              {!exp.current && (
-                <span
-                  className="block w-full h-full rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-200"
-                  style={{
-                    background:
-                      "linear-gradient(180deg,#62d089,rgba(98,208,137,0.2))",
-                  }}
-                />
-              )}
+            <span className="flex justify-end text-base tabular-nums text-spotify-silver">
+              {exp.current ? <Equalizer /> : index + 1}
             </span>
-
-            {/* Left: role + company · location */}
-            <div className="flex-1 min-w-0">
-              <div className="flex items-center gap-2 mb-0.5">
-                <span className="text-[14px] font-medium text-white/90 group-hover:text-white transition-colors duration-200 leading-snug">
-                  {exp.role}
-                </span>
-                {exp.current && (
-                  <span
-                    className="text-[9px] font-bold uppercase tracking-[0.15em] px-1.5 py-px rounded-full border"
-                    style={{
-                      color: "rgba(98,208,137,0.85)",
-                      borderColor: "rgba(98,208,137,0.25)",
-                      background: "rgba(98,208,137,0.07)",
-                    }}
-                  >
-                    Now
-                  </span>
-                )}
-              </div>
-              <span className="text-[12px] text-white/60 group-hover:text-white/70 transition-colors duration-200">
-                {exp.company}&ensp;·&ensp;{exp.location}
-              </span>
+            <div className="min-w-0">
+              <p
+                className={`truncate text-base ${
+                  exp.current ? "text-spotify-green" : "text-white"
+                }`}
+              >
+                {exp.role}
+              </p>
+              <p className="truncate text-sm text-spotify-silver">
+                {exp.company}
+              </p>
             </div>
-
-            {/* Right: period */}
-            <span className="text-[11px] text-white/60 group-hover:text-white/80 transition-colors duration-200 tabular-nums shrink-0 mt-[2px]">
+            <span className="truncate text-sm text-spotify-silver max-md:hidden">
+              {exp.location}
+            </span>
+            <span className="text-sm tabular-nums text-spotify-silver">
               {exp.period}
             </span>
-          </motion.div>
+          </motion.li>
         ))}
-      </motion.div>
-    </div>
+      </motion.ol>
+    </section>
   );
 }
 

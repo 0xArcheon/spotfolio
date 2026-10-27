@@ -1,134 +1,65 @@
 "use client";
 import React, { useState } from "react";
 import * as motion from "framer-motion/client";
-import { easeOut } from "framer-motion";
+
+const tabs = [
+  { key: "language", label: "Languages" },
+  { key: "framework", label: "Frameworks" },
+  { key: "database", label: "Databases" },
+];
+
+const itemLabel = {
+  language: "Language",
+  framework: "Framework",
+  database: "Database",
+};
 
 function TechStack({ framework = [], language = [], database = [] }) {
   const [tech, setTech] = useState("language");
-  const [dimensions, setDimensions] = useState({ width: 0, height: 0 });
-  const [mousePosition, setMousePosition] = useState({
-    x: dimensions.width,
-    y: 0,
-  });
-
-  // Track mouse position and card dimensions
-  const handleMouseMove = (e) => {
-    const rect = e.currentTarget.getBoundingClientRect();
-    const mouseX = e.clientX - rect.left;
-    const mouseY = e.clientY - rect.top;
-
-    setMousePosition({ x: mouseX, y: mouseY });
-    setDimensions({ width: rect.width, height: rect.height });
-  };
-
-  const handleMouseLeave = () => {
-    setMousePosition({ x: dimensions.width, y: 0 });
-  };
-  // Animation settings
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.2, // Adds a delay between each child element
-      },
-    },
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, x: -100 }, // Slide in from the left
-    visible: { opacity: 1, x: 0, transition: { duration: 0.5, ease: easeOut } },
-  };
-
-  const renderTechItems = (items) => {
-    return items.map((item) => (
-      <motion.div
-        className="techcard flex items-center justify-start gap-2"
-        key={item.name}
-        variants={itemVariants} // Each item gets the sliding animation
-      >
-        <img
-          src={item.icon}
-          alt=""
-          className="h-8 invert rounded-md bg-clip-padding backdrop-filter backdrop-blur-3xl bg-opacity-30"
-        />
-        <div className="name">{item.name}</div>
-      </motion.div>
-    ));
-  };
+  const items = { language, framework, database }[tech];
 
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 100 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5, ease: easeOut, delay: 0.2 }}
-      onMouseMove={handleMouseMove}
-      onMouseLeave={handleMouseLeave}
-      style={{
-        position: "relative",
-        overflow: "hidden",
-        background: "rgba(255, 255, 255, 0.1)",
-      }}
-      className="techstack flex flex-col rounded-xl p-4 gap-2 h-max
-    bg-slate-500 bg-clip-padding backdrop-filter backdrop-blur-3xl bg-opacity-30"
-    >
-      <div
-        className="absolute pointer-events-none"
-        style={{
-          top: 0,
-          left: 0,
-          width: "100%",
-          height: "100%",
-          background: `radial-gradient(circle at ${mousePosition.x}px ${mousePosition.y}px, rgba(98, 208, 137, 0.5), transparent 60%)`,
-          transition: "background 0.5s easeOut",
-        }}
-      ></div>
-      {/* <div className="title text-xl font-medium">Technology Stack</div> */}
-      <div className="flex items-center gap-3 mb-3">
-        <span className="text-[14px] font-bold uppercase tracking-[0.2em] text-white/80">
-          Technology Stack
-        </span>
-        <div className="flex-1 h-px bg-white/10" />
-      </div>
-      <div className="category text-xs flex gap-2">
-        <button
-          className={`rounded-xl p-2 bg-clip-padding backdrop-filter backdrop-blur-3xl bg-opacity-30 ${
-            tech === "language" ? "bg-slate-100" : "bg-slate-500"
-          }`}
-          onClick={() => setTech("language")}
-        >
-          Languages
-        </button>
-        <button
-          className={`rounded-xl p-2 bg-clip-padding backdrop-filter backdrop-blur-3xl bg-opacity-30 ${
-            tech === "framework" ? "bg-slate-100" : "bg-slate-500"
-          }`}
-          onClick={() => setTech("framework")}
-        >
-          Frameworks
-        </button>
-        <button
-          className={`rounded-xl p-2 bg-clip-padding backdrop-filter backdrop-blur-3xl bg-opacity-30 ${
-            tech === "db" ? "bg-slate-100" : "bg-slate-500"
-          }`}
-          onClick={() => setTech("db")}
-        >
-          Databases
-        </button>
+    <section>
+      <h2 className="mb-3 text-base font-bold">Technology Stack</h2>
+      <div className="mb-2 flex flex-wrap gap-2">
+        {tabs.map((tab) => (
+          <button
+            key={tab.key}
+            className="pill-dark"
+            aria-pressed={tech === tab.key}
+            onClick={() => setTech(tab.key)}
+          >
+            {tab.label}
+          </button>
+        ))}
       </div>
 
-      <motion.div
+      <motion.ul
         key={tech}
-        className="tech flex flex-col gap-3"
         initial="hidden"
         animate="visible"
-        variants={containerVariants}
+        variants={{ visible: { transition: { staggerChildren: 0.05 } } }}
       >
-        {tech === "language" && renderTechItems(language)}
-        {tech === "framework" && renderTechItems(framework)}
-        {tech === "db" && renderTechItems(database)}
-      </motion.div>
-    </motion.div>
+        {items.map((item) => (
+          <motion.li
+            key={item.name}
+            variants={{
+              hidden: { opacity: 0, y: 6 },
+              visible: { opacity: 1, y: 0 },
+            }}
+            className="-mx-2 flex items-center gap-3 rounded-md p-2 transition-colors hover:bg-spotify-elevated"
+          >
+            <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded bg-spotify-card">
+              <img src={item.icon} alt="" className="h-6 w-6 object-contain invert" />
+            </span>
+            <div className="min-w-0">
+              <p className="truncate text-base">{item.name}</p>
+              <p className="text-sm text-spotify-silver">{itemLabel[tech]}</p>
+            </div>
+          </motion.li>
+        ))}
+      </motion.ul>
+    </section>
   );
 }
 

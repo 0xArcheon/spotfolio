@@ -1,17 +1,12 @@
 import React from "react";
-import * as motion from "framer-motion/client";
-import { easeOut } from "framer-motion";
 
 function NowPlaying() {
   return (
-    <motion.main
-      initial={{ opacity: 0, x: +100 }}
-      animate={{ opacity: 1, x: 0 }}
-      transition={{ duration: 0.5, ease: easeOut, delay: 0.2 }}
-      className="nowplaying mb-8"
-    >
+    <section>
+      <h2 className="mb-3 text-base font-bold">On repeat</h2>
       <iframe
-        className="relative z-10 rounded-lg"
+        title="Currently on repeat"
+        className="rounded-lg shadow-card"
         src="https://open.spotify.com/embed/track/3cUxncrTWSA9lhlQbuIwUY?utm_source=generator&theme=0"
         width="100%"
         height="352"
@@ -19,7 +14,7 @@ function NowPlaying() {
         allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
         loading="lazy"
       />
-    </motion.main>
+    </section>
   );
 }
 
