@@ -58,11 +58,15 @@ export default function Page({ params }) {
                 <span className="font-bold text-white">{project.client}</span>
                 <Dot />
                 <span>{project.startYear}</span>
-                <Dot />
-                <span>
-                  {project.images.length} screenshot
-                  {project.images.length === 1 ? "" : "s"}
-                </span>
+                {project.images.length > 0 && (
+                  <>
+                    <Dot />
+                    <span>
+                      {project.images.length} screenshot
+                      {project.images.length === 1 ? "" : "s"}
+                    </span>
+                  </>
+                )}
               </>
             }
           >

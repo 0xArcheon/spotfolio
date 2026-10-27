@@ -1,5 +1,35 @@
 export const projects = [
   {
+    projectId: "mati",
+    name: "MATi",
+    description:
+      "MATi (Management of Assets and Titles) is the re-architected successor to NGDRS, the National Generic Document Registration System. Citizens register deeds online, which are then verified by Sub-Registrar officers. I built two new microservices for the platform: dynamic deed fee calculation and appointment booking for in-person visits to the registering office.",
+    logo: {
+      url: "/logos/mati.svg",
+      alt: "MATi Logo",
+    },
+    technologies: {
+      language: [{ name: "PHP", icon: "/php.svg" }],
+      framework: [{ name: "Laravel", icon: "/laravel.svg" }],
+      database: [{ name: "PostgreSQL", icon: "/pgsql.png" }],
+    },
+    images: [],
+    link: {
+      url: "#",
+      text: "internal",
+    },
+    startYear: 2026,
+    client: "Revenue & Disaster Management Department, Assam",
+    engagement:
+      "As a Software Developer at NIC Assam, I am part of the team rebuilding the existing NGDRS platform on a new architecture, now called MATi. My work centres on two new Laravel microservices within the MATi portal: one calculates the fees for a deed dynamically, and the other lets citizens book in-person appointments with their registering office to finalise the documentation.",
+    responsibilities: [
+      "Designed and built a fee calculation microservice in Laravel and PostgreSQL that dynamically computes the fees payable on a deed from the details of the registration.",
+      "Built an appointment booking microservice that lets citizens schedule an in-person visit to their registering office to finalise deed documentation with the Sub-Registrar.",
+      "Exposed both services as REST APIs consumed by the MATi portal, keeping them independently deployable from the core registration workflow.",
+      "Contributed to moving the legacy NGDRS platform to MATi's new service-based architecture.",
+    ],
+  },
+  {
     projectId: "pharmacy-billing",
     name: "HMS3 Pharmacy Module",
     description:
