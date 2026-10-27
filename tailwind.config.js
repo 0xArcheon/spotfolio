@@ -1,6 +1,5 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  darkMode: ["class"],
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
@@ -26,14 +25,6 @@ module.exports = {
           warning: "#ffa42b",
           announcement: "#539df5",
         },
-        background: "hsl(var(--background))",
-        foreground: "hsl(var(--foreground))",
-        popover: {
-          DEFAULT: "hsl(var(--popover))",
-          foreground: "hsl(var(--popover-foreground))",
-        },
-        border: "hsl(var(--border))",
-        ring: "hsl(var(--ring))",
       },
       fontFamily: {
         sans: [
@@ -77,6 +68,5 @@ module.exports = {
   },
   plugins: [
     require("tailwind-scrollbar")({ preferredStrategy: "pseudoelements" }),
-    require("tailwindcss-animate"),
   ],
 };

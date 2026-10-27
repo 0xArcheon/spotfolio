@@ -3,7 +3,6 @@ import PageHeader, { Dot } from "./PageHeader";
 import ExpCard from "./ExpCard";
 import ProjectSection from "./ProjectSection";
 import IntroSection from "./IntroSection";
-import { projects } from "@/lib/db";
 import { email, resumeUrl, socials, SocialIcon, linkTarget } from "@/lib/socials";
 
 function MainCard() {
@@ -20,8 +19,6 @@ function MainCard() {
             <span className="font-bold text-white">Software Developer</span>
             <Dot />
             <span>Guwahati, India</span>
-            <Dot />
-            <span>{projects.length} projects</span>
           </>
         }
       >
@@ -33,7 +30,7 @@ function MainCard() {
             href={resumeUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="pill-outline"
+            className="pill-outline h-12 px-8"
           >
             Resume
           </a>

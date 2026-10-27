@@ -5,7 +5,26 @@ export const resumeUrl =
 
 export const email = "mailto:imamlan04@gmail.com";
 
-// `icon` is a lucide component; `img` is a monochrome asset in /public
+// Letterboxd's three dots, drawn in lucide's outline style so it inherits
+// the same colour and hover states as the other icons
+function Letterboxd({ size = 24 }) {
+  return (
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      aria-hidden="true"
+    >
+      <circle cx="5.5" cy="12" r="4" />
+      <circle cx="12" cy="12" r="4" />
+      <circle cx="18.5" cy="12" r="4" />
+    </svg>
+  );
+}
+
 export const socials = [
   {
     name: "LinkedIn",
@@ -16,23 +35,14 @@ export const socials = [
   { name: "Email", icon: Mail, link: email },
   {
     name: "Letterboxd",
-    img: "/letterboxd.svg",
+    icon: Letterboxd,
     link: "https://letterboxd.com/imamlan03",
   },
 ];
 
 export function SocialIcon({ social, size = 18 }) {
   const Icon = social.icon;
-  if (Icon) return <Icon size={size} />;
-  return (
-    <img
-      src={social.img}
-      alt=""
-      width={size}
-      height={size}
-      className="opacity-70 invert transition-opacity group-hover:opacity-100"
-    />
-  );
+  return <Icon size={size} />;
 }
 
 export function linkTarget(link) {
